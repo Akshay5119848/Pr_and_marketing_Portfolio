@@ -1,0 +1,1382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0" />
+
+  <title>
+    Akashay Kumar | Portfolio
+  </title>
+
+  <!-- GOOGLE FONTS -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- FONT AWESOME -->
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    :root{
+
+      --white:#ffffff;
+      --text:#f4f4f4;
+      --muted:#d9d9d9;
+
+      --glass:
+      rgba(255,255,255,0.12);
+
+      --glass-border:
+      rgba(255,255,255,0.16);
+
+      --shadow:
+      0 10px 40px rgba(0,0,0,0.25);
+
+    }
+
+    body{
+
+      font-family:'Outfit',sans-serif;
+
+      color:var(--text);
+
+      overflow-x:hidden;
+
+      background:
+      linear-gradient(
+      135deg,
+      #ff3b3b 0%,
+      #2563eb 45%,
+      #00c16a 100%
+      );
+
+      min-height:100vh;
+
+      position:relative;
+    }
+
+    /* ANIMATED BACKGROUND GLOW */
+
+    body::before{
+
+      content:"";
+
+      position:fixed;
+      inset:0;
+
+      background:
+      radial-gradient(
+      circle at top left,
+      rgba(255,255,255,0.25),
+      transparent 30%
+      ),
+
+      radial-gradient(
+      circle at bottom right,
+      rgba(255,255,255,0.15),
+      transparent 30%
+      );
+
+      z-index:-2;
+    }
+
+    /* GLASS OVERLAY */
+
+    body::after{
+
+      content:"";
+
+      position:fixed;
+      inset:0;
+
+      background:
+      rgba(255,255,255,0.02);
+
+      backdrop-filter:blur(60px);
+
+      z-index:-1;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    /* NAVBAR */
+
+    nav{
+
+      width:100%;
+
+      position:fixed;
+      top:0;
+      left:0;
+
+      padding:24px 7%;
+
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+
+      background:
+      rgba(255,255,255,0.08);
+
+      border-bottom:
+      1px solid rgba(255,255,255,0.08);
+
+      backdrop-filter:blur(22px);
+
+      z-index:9999;
+    }
+
+    .logo{
+
+      font-family:'Syne',sans-serif;
+
+      font-size:34px;
+      font-weight:800;
+
+      letter-spacing:1px;
+
+      color:white;
+    }
+
+    .nav-links{
+
+      display:flex;
+      gap:35px;
+    }
+
+    .nav-links a{
+
+      color:rgba(255,255,255,0.85);
+
+      font-size:14px;
+
+      position:relative;
+
+      transition:.3s;
+    }
+
+    .nav-links a:hover{
+      color:white;
+    }
+
+    .nav-links a::after{
+
+      content:"";
+
+      position:absolute;
+
+      left:0;
+      bottom:-6px;
+
+      width:0%;
+      height:2px;
+
+      background:white;
+
+      transition:.3s;
+    }
+
+    .nav-links a:hover::after{
+      width:100%;
+    }
+
+    .menu-btn{
+      display:none;
+      font-size:24px;
+      cursor:pointer;
+    }
+
+    /* HERO */
+
+    .hero{
+
+      min-height:100vh;
+
+      padding:
+      170px 7% 80px;
+
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+
+      gap:80px;
+      flex-wrap:wrap;
+    }
+
+    .hero-content{
+      flex:1;
+      min-width:320px;
+    }
+
+    .small-text{
+
+      text-transform:uppercase;
+
+      letter-spacing:5px;
+
+      margin-bottom:25px;
+
+      font-size:13px;
+
+      color:rgba(255,255,255,0.85);
+    }
+
+    .hero h1{
+
+      font-family:'Syne',sans-serif;
+
+      font-size:92px;
+      line-height:95px;
+
+      margin-bottom:30px;
+
+      font-weight:800;
+
+      text-shadow:
+      0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    .hero p{
+
+      font-size:18px;
+
+      line-height:36px;
+
+      max-width:650px;
+
+      color:rgba(255,255,255,0.9);
+
+      margin-bottom:45px;
+    }
+
+    /* BUTTONS */
+
+    .buttons{
+      display:flex;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+
+      padding:16px 34px;
+
+      border-radius:60px;
+
+      border:none;
+
+      cursor:pointer;
+
+      font-size:15px;
+      font-weight:700;
+
+      transition:.4s;
+    }
+
+    .primary-btn{
+
+      background:
+      rgba(255,255,255,0.18);
+
+      border:
+      1px solid rgba(255,255,255,0.18);
+
+      backdrop-filter:blur(18px);
+
+      color:white;
+
+      box-shadow:
+      0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    .primary-btn:hover{
+
+      transform:
+      translateY(-6px)
+      scale(1.02);
+
+      background:
+      rgba(255,255,255,0.28);
+    }
+
+    .secondary-btn{
+
+      background:
+      rgba(255,255,255,0.08);
+
+      border:
+      1px solid rgba(255,255,255,0.14);
+
+      backdrop-filter:blur(18px);
+
+      color:white;
+    }
+
+    .secondary-btn:hover{
+
+      transform:
+      translateY(-6px);
+    }
+
+    /* SOCIALS */
+
+    .socials{
+
+      display:flex;
+      gap:18px;
+
+      margin-top:50px;
+    }
+
+    .socials a{
+
+      width:56px;
+      height:56px;
+
+      display:flex;
+      justify-content:center;
+      align-items:center;
+
+      border-radius:50%;
+
+      background:var(--glass);
+
+      border:
+      1px solid var(--glass-border);
+
+      backdrop-filter:blur(18px);
+
+      transition:.4s;
+
+      box-shadow:var(--shadow);
+    }
+
+    .socials a:hover{
+
+      transform:
+      translateY(-6px)
+      scale(1.05);
+
+      background:
+      rgba(255,255,255,0.2);
+    }
+
+    /* IMAGE */
+
+    .hero-image{
+
+      flex:1;
+
+      display:flex;
+      justify-content:center;
+
+      min-width:320px;
+    }
+
+    .image-box{
+
+      padding:20px;
+
+      border-radius:40px;
+
+      background:
+      rgba(255,255,255,0.1);
+
+      border:
+      1px solid rgba(255,255,255,0.18);
+
+      backdrop-filter:blur(25px);
+
+      box-shadow:
+      0 20px 60px rgba(0,0,0,0.25);
+
+      transform:rotate(-2deg);
+    }
+
+    .image-box img{
+
+      width:430px;
+      max-width:100%;
+
+      border-radius:28px;
+
+      display:block;
+
+      object-fit:cover;
+    }
+
+    /* SECTIONS */
+
+    section{
+      padding:100px 7%;
+    }
+
+    .section-title{
+
+      font-family:'Syne',sans-serif;
+
+      font-size:56px;
+
+      margin-bottom:60px;
+
+      display:inline-block;
+
+      position:relative;
+    }
+
+    .section-title::after{
+
+      content:"";
+
+      position:absolute;
+
+      left:0;
+      bottom:-10px;
+
+      width:90px;
+      height:4px;
+
+      border-radius:20px;
+
+      background:
+      rgba(255,255,255,0.8);
+    }
+
+    /* GLASS CARD */
+
+    .glass{
+
+      background:
+      rgba(255,255,255,0.1);
+
+      border:
+      1px solid rgba(255,255,255,0.16);
+
+      backdrop-filter:blur(25px);
+
+      border-radius:34px;
+
+      box-shadow:
+      0 20px 60px rgba(0,0,0,0.15);
+    }
+
+    /* ABOUT */
+
+    .about-card{
+      padding:50px;
+    }
+
+    .about-card p{
+
+      font-size:18px;
+      line-height:36px;
+
+      color:
+      rgba(255,255,255,0.9);
+    }
+
+    /* EXPERIENCE */
+
+    .exp-wrap{
+      display:flex;
+      flex-direction:column;
+      gap:28px;
+    }
+
+    .exp-card{
+
+      padding:35px;
+
+      transition:.4s;
+    }
+
+    .exp-card:hover{
+
+      transform:
+      translateY(-8px)
+      scale(1.01);
+    }
+
+    .exp-top{
+
+      display:flex;
+      justify-content:space-between;
+      flex-wrap:wrap;
+
+      gap:20px;
+
+      margin-bottom:18px;
+    }
+
+    .exp-card h3{
+      font-size:28px;
+      font-weight:700;
+    }
+
+    .exp-card span{
+      color:rgba(255,255,255,0.75);
+    }
+
+    .exp-card p{
+
+      color:
+      rgba(255,255,255,0.9);
+
+      line-height:32px;
+    }
+
+    /* SKILLS */
+
+    .skills{
+
+      display:flex;
+      flex-wrap:wrap;
+      gap:18px;
+    }
+
+    .skill{
+
+      padding:15px 25px;
+
+      border-radius:60px;
+
+      background:
+      rgba(255,255,255,0.1);
+
+      border:
+      1px solid rgba(255,255,255,0.16);
+
+      backdrop-filter:blur(18px);
+
+      transition:.4s;
+    }
+
+    .skill:hover{
+
+      transform:
+      translateY(-5px)
+      scale(1.04);
+
+      background:
+      rgba(255,255,255,0.18);
+    }
+
+    /* CONTACT */
+
+    .contact-wrap{
+
+      display:grid;
+
+      grid-template-columns:
+      repeat(2,1fr);
+
+      gap:50px;
+    }
+
+    .contact-text p{
+
+      font-size:18px;
+
+      line-height:35px;
+
+      color:
+      rgba(255,255,255,0.9);
+
+      margin-bottom:35px;
+    }
+
+    .contact-info{
+
+      display:flex;
+      flex-direction:column;
+      gap:20px;
+    }
+
+    .contact-item{
+
+      display:flex;
+      align-items:center;
+
+      gap:18px;
+    }
+
+    .contact-item i{
+
+      width:52px;
+      height:52px;
+
+      display:flex;
+      justify-content:center;
+      align-items:center;
+
+      border-radius:50%;
+
+      background:
+      rgba(255,255,255,0.1);
+
+      border:
+      1px solid rgba(255,255,255,0.16);
+
+      backdrop-filter:blur(18px);
+    }
+
+    /* FORM */
+
+    .contact-form{
+      padding:35px;
+    }
+
+    .form-group{
+      margin-bottom:22px;
+    }
+
+    .form-group input,
+    .form-group textarea{
+
+      width:100%;
+
+      padding:18px 22px;
+
+      border:none;
+      outline:none;
+
+      border-radius:18px;
+
+      background:
+      rgba(255,255,255,0.08);
+
+      border:
+      1px solid rgba(255,255,255,0.12);
+
+      backdrop-filter:blur(18px);
+
+      color:white;
+
+      font-size:16px;
+
+      font-family:'Outfit',sans-serif;
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder{
+      color:rgba(255,255,255,0.7);
+    }
+
+    textarea{
+      resize:none;
+    }
+
+    .submit-btn{
+
+      padding:16px 34px;
+
+      border:none;
+
+      border-radius:60px;
+
+      background:
+      rgba(255,255,255,0.16);
+
+      border:
+      1px solid rgba(255,255,255,0.18);
+
+      backdrop-filter:blur(18px);
+
+      color:white;
+
+      font-size:15px;
+      font-weight:700;
+
+      cursor:pointer;
+
+      transition:.4s;
+    }
+
+    .submit-btn:hover{
+
+      transform:
+      translateY(-6px)
+      scale(1.03);
+
+      background:
+      rgba(255,255,255,0.24);
+    }
+
+    /* FOOTER */
+
+    footer{
+
+      padding:35px 7%;
+
+      margin-top:40px;
+
+      border-top:
+      1px solid rgba(255,255,255,0.08);
+
+      display:flex;
+      justify-content:space-between;
+      flex-wrap:wrap;
+
+      gap:20px;
+
+      color:
+      rgba(255,255,255,0.75);
+    }
+
+    /* RESUME OVERLAY */
+
+    .resume-overlay{
+
+      position:fixed;
+      inset:0;
+
+      width:100%;
+      height:100vh;
+
+      background:
+      linear-gradient(
+      135deg,
+      #ff3b3b,
+      #2563eb,
+      #00c16a
+      );
+
+      z-index:99999;
+
+      display:none;
+      flex-direction:column;
+    }
+
+    .resume-header{
+
+      width:100%;
+
+      padding:18px 6%;
+
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+
+      background:
+      rgba(255,255,255,0.08);
+
+      border-bottom:
+      1px solid rgba(255,255,255,0.08);
+
+      backdrop-filter:blur(22px);
+    }
+
+    .resume-header button,
+    .download-btn{
+
+      padding:14px 24px;
+
+      border:none;
+
+      border-radius:50px;
+
+      cursor:pointer;
+
+      background:
+      rgba(255,255,255,0.14);
+
+      border:
+      1px solid rgba(255,255,255,0.14);
+
+      backdrop-filter:blur(18px);
+
+      color:white;
+
+      font-weight:700;
+    }
+
+    #resumeFrame{
+      width:100%;
+      height:100%;
+      border:none;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:1100px){
+
+      .hero{
+        flex-direction:column-reverse;
+        text-align:center;
+      }
+
+      .buttons,
+      .socials{
+        justify-content:center;
+      }
+
+      .hero h1{
+        font-size:68px;
+        line-height:72px;
+      }
+
+      .contact-wrap{
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media(max-width:768px){
+
+      nav{
+        padding:18px 6%;
+      }
+
+      .menu-btn{
+        display:block;
+      }
+
+      .nav-links{
+
+        position:absolute;
+
+        top:80px;
+        right:-100%;
+
+        width:260px;
+
+        flex-direction:column;
+
+        padding:30px;
+
+        border-radius:25px;
+
+        background:
+        rgba(255,255,255,0.08);
+
+        backdrop-filter:blur(20px);
+
+        transition:.4s;
+      }
+
+      .nav-links.active{
+        right:20px;
+      }
+
+      .hero{
+        padding:130px 6% 80px;
+      }
+
+      section{
+        padding:80px 6%;
+      }
+
+      .hero h1{
+        font-size:52px;
+        line-height:58px;
+      }
+
+      .section-title{
+        font-size:42px;
+      }
+    }
+
+    @media(max-width:480px){
+
+      .hero h1{
+        font-size:42px;
+        line-height:48px;
+      }
+
+      .buttons{
+        flex-direction:column;
+      }
+
+      .btn{
+        width:100%;
+      }
+
+      .section-title{
+        font-size:36px;
+      }
+
+      .about-card,
+      .exp-card,
+      .contact-form{
+        padding:25px;
+      }
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <nav>
+
+    <div class="logo">
+      AKASHAY.
+    </div>
+
+    <div class="nav-links" id="navLinks">
+
+      <a href="#about">ABOUT</a>
+      <a href="#experience">EXPERIENCE</a>
+      <a href="#skills">SKILLS</a>
+      <a href="#contact">CONTACT</a>
+
+    </div>
+
+    <div class="menu-btn" id="menuBtn">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+
+  </nav>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <div class="small-text">
+        PR • DIGITAL STORYTELLING • CREATIVE CULTURE • MEDIA STRATEGY • COPYWRITING • DIGITAL MARKETING
+      </div>
+
+      <h1>
+        Building stories
+        that feel alive,
+        emotional &
+        culturally relevant.
+      </h1>
+
+      <p>
+        Public relations and media communication
+        professional blending storytelling,
+        visual aesthetics, strategy, and digital
+        culture to create meaningful brand narratives.
+      </p>
+
+      <div class="buttons">
+
+        <a
+          href="Akashay_Kumar_Resume.pdf"
+          target="resumeFrame"
+          class="btn primary-btn"
+          onclick="openResume(event)">
+
+          View Resume
+
+        </a>
+
+        <a
+          href="#contact"
+          class="btn secondary-btn">
+
+          Let's Connect
+
+        </a>
+
+      </div>
+
+      <!-- SOCIALS -->
+
+      <div class="socials">
+
+        <a href="https://www.linkedin.com/in/akashay-kumar-725533352">
+          <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+
+        <a href="https://www.instagram.com/ahem_akashay/">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+
+        <a href="#">
+          <i class="fa-brands fa-x-twitter"></i>
+        </a>
+
+        <a href="mailto:akshay2001singh@gmail.com">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+
+      </div>
+
+    </div>
+
+    <!-- IMAGE -->
+
+    <div class="hero-image">
+
+      <div class="image-box">
+
+        <img
+          src="89ED34C1-E5FA-4BFC-AE0D-6CB62F7FECD2.PNG"
+          alt="Akashay Kumar">
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ABOUT -->
+
+  <section id="about">
+
+    <h2 class="section-title">
+      About
+    </h2>
+
+    <div class="about-card glass">
+
+      <p>
+        I come from an artistic and communication driven
+        background where storytelling, visuals, emotion,
+        and culture shape the way audiences connect with
+        brands. My work blends public relations,
+        media strategy, digital communication,
+        and creative storytelling into experiences
+        that feel authentic and impactful. Shapping narratives through
+        art of storytelling, visual aesthetics, and strategy is my forte
+        with my skills and expertise in public relations, digital marketing,
+        media strategy, and creative storytelling. I can help the brand build a 
+        presence that resonates with audiences and engages them in meaningful ways.
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- EXPERIENCE -->
+
+  <section id="experience">
+
+    <h2 class="section-title">
+      Experience
+    </h2>
+
+    <div class="exp-wrap">
+
+      <div class="exp-card glass">
+
+        <div class="exp-top">
+          <h3>Burson</h3>
+          <span>PR Intern</span>
+        </div>
+
+        <p>
+          Assisted in PR campaigns, communication strategy,
+          brand storytelling, and media relations.
+          Working along the Honda team learned usefull Pr-practices.
+          Handling and managing PR projects. Crafted and curated a influencer
+          list for brand, did brand awarness used new-gen ai tools and platforms
+          for media management and media monitoring with the strong understanding of
+          research and analysis created reports for the brand.
+        </p>
+
+      </div>
+
+      <div class="exp-card glass">
+
+        <div class="exp-top">
+          <h3>Congress</h3>
+          <span>Media & Communication Intern</span>
+        </div>
+
+        <p>
+          Worked on narrative analysis, campaign tracking,
+          and media communication strategies.
+          Analyzed media coverage and created
+          engaging narratives for the campaign.
+          Worked as a media monitoring partner always
+          keeping an eye on the media coverage. when every headline
+          was important worked for BJNY and election 2024.
+        </p>
+
+      </div>
+
+      <div class="exp-card glass">
+
+        <div class="exp-top">
+          <h3>GKFTII</h3>
+          <span>Content Writer</span>
+        </div>
+
+        <p>
+          Created SEO content and digital storytelling
+          focused communication for online audiences.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- SKILLS -->
+
+  <section id="skills">
+
+    <h2 class="section-title">
+      Skills
+    </h2>
+
+    <div class="skills">
+
+      <div class="skill">Creative Storytelling</div>
+      <div class="skill">Brand Communication</div>
+      <div class="skill">Public Relations</div>
+      <div class="skill">Media Strategy</div>
+      <div class="skill">Copywriting</div>
+      <div class="skill">SEO Content</div>
+      <div class="skill">Audience Engagement</div>
+      <div class="skill">Digital Communication</div>
+        <div class="skill">Campaign Management</div>
+        <div class="skill">Media Monitoring</div>
+        <div class="skill">Influencer Outreach</div>
+        <div class="skill">Research & Analysis</div>
+        <div class="skill">Brand Awareness</div>
+        <div class="skill">Content Writing</div>
+
+    </div>
+
+  </section>
+
+  <!-- CONTACT -->
+
+  <section id="contact">
+
+    <h2 class="section-title">
+      Contact
+    </h2>
+
+    <div class="contact-wrap">
+
+      <!-- LEFT -->
+
+      <div class="contact-text">
+
+        <p>
+          Open to opportunities in public relations,
+          media communication, digital storytelling,
+          and creative strategy.
+        </p>
+
+        <div class="contact-info">
+
+          <div class="contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <span>
+              akshay2001singh@gmail.com
+            </span>
+          </div>
+
+          <div class="contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <span>
+              +91 7321850064
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- FORM -->
+
+      <form
+        name="contact"
+        method="POST"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+        action="/success.html"
+        class="contact-form glass">
+
+        <input
+          type="hidden"
+          name="form-name"
+          value="contact">
+
+        <p hidden>
+          <input name="bot-field">
+        </p>
+
+        <div class="form-group">
+
+          <input
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            required>
+
+        </div>
+
+        <div class="form-group">
+
+          <input
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            required>
+
+        </div>
+
+        <div class="form-group">
+
+          <textarea
+            name="message"
+            rows="6"
+            placeholder="Write your message..."
+            required></textarea>
+
+        </div>
+
+        <button
+          type="submit"
+          class="submit-btn">
+
+          Send Message
+
+        </button>
+
+      </form>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <p>
+      © 2026 Akashay Kumar — crafted with creativity.
+    </p>
+
+    <div>
+      LinkedIn • Instagram • Twitter
+    </div>
+
+  </footer>
+
+  <!-- RESUME OVERLAY -->
+
+  <div
+    class="resume-overlay"
+    id="resumeOverlay">
+
+    <div class="resume-header">
+
+      <button onclick="closeResume()">
+        ← Back to Portfolio
+      </button>
+
+      <a
+        href="Akashay_Kumar_Resume.pdf"
+        download
+        class="download-btn">
+
+        Download Resume
+
+      </a>
+
+    </div>
+
+    <iframe
+      src=""
+      id="resumeFrame">
+    </iframe>
+
+  </div>
+
+  <!-- JAVASCRIPT -->
+
+  <script>
+
+    // MOBILE MENU
+
+    const menuBtn =
+    document.getElementById("menuBtn");
+
+    const navLinks =
+    document.getElementById("navLinks");
+
+    menuBtn.addEventListener("click", () => {
+
+      navLinks.classList.toggle("active");
+
+    });
+
+    document
+    .querySelectorAll(".nav-links a")
+
+    .forEach(link => {
+
+      link.addEventListener("click", () => {
+
+        navLinks.classList.remove("active");
+
+      });
+
+    });
+
+    // RESUME OVERLAY
+
+    function openResume(event){
+
+      event.preventDefault();
+
+      const overlay =
+      document.getElementById("resumeOverlay");
+
+      const frame =
+      document.getElementById("resumeFrame");
+
+      frame.src =
+      "Akashay_Kumar_Resume.pdf";
+
+      overlay.style.display = "flex";
+
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeResume(){
+
+      const overlay =
+      document.getElementById("resumeOverlay");
+
+      const frame =
+      document.getElementById("resumeFrame");
+
+      overlay.style.display = "none";
+
+      frame.src = "";
+
+      document.body.style.overflow = "auto";
+    }
+
+  </script>
+
+</body>
+</html>
