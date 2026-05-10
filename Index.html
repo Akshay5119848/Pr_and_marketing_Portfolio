@@ -40,19 +40,16 @@
 
     :root{
 
-      --white:#ffffff;
-      --text:#f4f4f4;
-      --muted:#d9d9d9;
+      --text:#f5f5f5;
 
       --glass:
-      rgba(255,255,255,0.12);
+      rgba(255,255,255,0.08);
 
       --glass-border:
-      rgba(255,255,255,0.16);
+      rgba(255,255,255,0.14);
 
       --shadow:
-      0 10px 40px rgba(0,0,0,0.25);
-
+      0 10px 40px rgba(0,0,0,0.22);
     }
 
     body{
@@ -76,7 +73,7 @@
       position:relative;
     }
 
-    /* ANIMATED BACKGROUND GLOW */
+    /* BACKGROUND GLOW */
 
     body::before{
 
@@ -88,13 +85,13 @@
       background:
       radial-gradient(
       circle at top left,
-      rgba(255,255,255,0.25),
+      rgba(255,255,255,0.2),
       transparent 30%
       ),
 
       radial-gradient(
       circle at bottom right,
-      rgba(255,255,255,0.15),
+      rgba(255,255,255,0.1),
       transparent 30%
       );
 
@@ -157,8 +154,6 @@
       font-size:34px;
       font-weight:800;
 
-      letter-spacing:1px;
-
       color:white;
     }
 
@@ -170,7 +165,8 @@
 
     .nav-links a{
 
-      color:rgba(255,255,255,0.85);
+      color:
+      rgba(255,255,255,0.85);
 
       font-size:14px;
 
@@ -242,19 +238,18 @@
 
       font-size:13px;
 
-      color:rgba(255,255,255,0.85);
+      color:
+      rgba(255,255,255,0.85);
     }
 
     .hero h1{
 
       font-family:'Syne',sans-serif;
 
-      font-size:92px;
-      line-height:95px;
+      font-size:88px;
+      line-height:92px;
 
       margin-bottom:30px;
-
-      font-weight:800;
 
       text-shadow:
       0 10px 30px rgba(0,0,0,0.2);
@@ -268,7 +263,8 @@
 
       max-width:650px;
 
-      color:rgba(255,255,255,0.9);
+      color:
+      rgba(255,255,255,0.9);
 
       margin-bottom:45px;
     }
@@ -300,7 +296,7 @@
     .primary-btn{
 
       background:
-      rgba(255,255,255,0.18);
+      rgba(255,255,255,0.16);
 
       border:
       1px solid rgba(255,255,255,0.18);
@@ -309,18 +305,16 @@
 
       color:white;
 
-      box-shadow:
-      0 10px 30px rgba(0,0,0,0.2);
+      box-shadow:var(--shadow);
     }
 
     .primary-btn:hover{
 
       transform:
-      translateY(-6px)
-      scale(1.02);
+      translateY(-6px);
 
       background:
-      rgba(255,255,255,0.28);
+      rgba(255,255,255,0.24);
     }
 
     .secondary-btn{
@@ -371,8 +365,6 @@
       backdrop-filter:blur(18px);
 
       transition:.4s;
-
-      box-shadow:var(--shadow);
     }
 
     .socials a:hover{
@@ -404,15 +396,15 @@
       border-radius:40px;
 
       background:
-      rgba(255,255,255,0.1);
+      rgba(255,255,255,0.10);
 
       border:
-      1px solid rgba(255,255,255,0.18);
+      1px solid rgba(255,255,255,0.16);
 
       backdrop-filter:blur(25px);
 
       box-shadow:
-      0 20px 60px rgba(0,0,0,0.25);
+      0 20px 60px rgba(0,0,0,0.22);
 
       transform:rotate(-2deg);
     }
@@ -425,11 +417,9 @@
       border-radius:28px;
 
       display:block;
-
-      object-fit:cover;
     }
 
-    /* SECTIONS */
+    /* SECTION */
 
     section{
       padding:100px 7%;
@@ -463,7 +453,7 @@
       border-radius:20px;
 
       background:
-      rgba(255,255,255,0.8);
+      rgba(255,255,255,0.85);
     }
 
     /* GLASS CARD */
@@ -471,12 +461,12 @@
     .glass{
 
       background:
-      rgba(255,255,255,0.1);
+      rgba(255,255,255,0.10);
 
       border:
       1px solid rgba(255,255,255,0.16);
 
-      backdrop-filter:blur(25px);
+      backdrop-filter:blur(24px);
 
       border-radius:34px;
 
@@ -496,7 +486,7 @@
       line-height:36px;
 
       color:
-      rgba(255,255,255,0.9);
+      rgba(255,255,255,0.92);
     }
 
     /* EXPERIENCE */
@@ -517,8 +507,7 @@
     .exp-card:hover{
 
       transform:
-      translateY(-8px)
-      scale(1.01);
+      translateY(-8px);
     }
 
     .exp-top{
@@ -534,7 +523,6 @@
 
     .exp-card h3{
       font-size:28px;
-      font-weight:700;
     }
 
     .exp-card span{
@@ -543,10 +531,10 @@
 
     .exp-card p{
 
+      line-height:32px;
+
       color:
       rgba(255,255,255,0.9);
-
-      line-height:32px;
     }
 
     /* SKILLS */
@@ -565,7 +553,7 @@
       border-radius:60px;
 
       background:
-      rgba(255,255,255,0.1);
+      rgba(255,255,255,0.10);
 
       border:
       1px solid rgba(255,255,255,0.16);
@@ -578,8 +566,7 @@
     .skill:hover{
 
       transform:
-      translateY(-5px)
-      scale(1.04);
+      translateY(-5px);
 
       background:
       rgba(255,255,255,0.18);
@@ -595,6 +582,8 @@
       repeat(2,1fr);
 
       gap:50px;
+
+      align-items:center;
     }
 
     .contact-text p{
@@ -603,10 +592,10 @@
 
       line-height:35px;
 
+      margin-bottom:35px;
+
       color:
       rgba(255,255,255,0.9);
-
-      margin-bottom:35px;
     }
 
     .contact-info{
@@ -636,94 +625,117 @@
       border-radius:50%;
 
       background:
-      rgba(255,255,255,0.1);
+      rgba(255,255,255,0.10);
 
       border:
       1px solid rgba(255,255,255,0.16);
-
-      backdrop-filter:blur(18px);
     }
 
-    /* FORM */
+    /* EDITORIAL SYSTEM */
 
-    .contact-form{
-      padding:35px;
-    }
+    .editorial-system{
 
-    .form-group{
-      margin-bottom:22px;
-    }
-
-    .form-group input,
-    .form-group textarea{
+      position:relative;
 
       width:100%;
+      height:560px;
 
-      padding:18px 22px;
+      overflow:hidden;
 
-      border:none;
-      outline:none;
-
-      border-radius:18px;
+      border-radius:40px;
 
       background:
-      rgba(255,255,255,0.08);
+      rgba(255,255,255,0.06);
 
       border:
       1px solid rgba(255,255,255,0.12);
 
-      backdrop-filter:blur(18px);
+      backdrop-filter:blur(24px);
 
-      color:white;
-
-      font-size:16px;
-
-      font-family:'Outfit',sans-serif;
+      box-shadow:
+      0 20px 60px rgba(0,0,0,0.2);
     }
 
-    .form-group input::placeholder,
-    .form-group textarea::placeholder{
-      color:rgba(255,255,255,0.7);
+    /* CENTER CARD */
+
+    .editorial-center{
+
+      position:absolute;
+
+      top:50%;
+      left:50%;
+
+      transform:
+      translate(-50%,-50%);
+
+      width:340px;
+
+      padding:42px;
+
+      z-index:20;
+
+      text-align:center;
     }
 
-    textarea{
-      resize:none;
+    .editorial-small{
+
+      display:block;
+
+      font-size:12px;
+
+      letter-spacing:4px;
+
+      margin-bottom:18px;
+
+      color:
+      rgba(255,255,255,0.75);
     }
 
-    .submit-btn{
+    .editorial-center h3{
 
-      padding:16px 34px;
+      font-family:'Syne',sans-serif;
 
-      border:none;
+      font-size:30px;
+
+      line-height:42px;
+    }
+
+    /* FLOATING WORDS */
+
+    .floating-word{
+
+      position:absolute;
+
+      padding:14px 24px;
 
       border-radius:60px;
 
       background:
-      rgba(255,255,255,0.16);
+      rgba(255,255,255,0.10);
 
       border:
-      1px solid rgba(255,255,255,0.18);
-
-      backdrop-filter:blur(18px);
+      1px solid rgba(255,255,255,0.14);
 
       color:white;
 
-      font-size:15px;
-      font-weight:700;
+      font-size:13px;
+      font-weight:600;
 
-      cursor:pointer;
+      letter-spacing:2px;
 
-      transition:.4s;
+      white-space:nowrap;
+
+      transition:
+      all 2.2s cubic-bezier(.17,.67,.31,1.05);
     }
 
-    .submit-btn:hover{
+    .floating-word:hover{
 
       transform:
-      translateY(-6px)
-      scale(1.03);
+      scale(1.05);
 
       background:
-      rgba(255,255,255,0.24);
+      rgba(255,255,255,0.18);
     }
 
     /* FOOTER */
@@ -790,8 +802,7 @@
       backdrop-filter:blur(22px);
     }
 
-    .resume-header button,
-    .download-btn{
+    .resume-header button{
 
       padding:14px 24px;
 
@@ -806,8 +817,6 @@
 
       border:
       1px solid rgba(255,255,255,0.14);
-
-      backdrop-filter:blur(18px);
 
       color:white;
 
@@ -872,8 +881,6 @@
         background:
         rgba(255,255,255,0.08);
 
-        backdrop-filter:blur(20px);
-
         transition:.4s;
       }
 
@@ -897,6 +904,30 @@
       .section-title{
         font-size:42px;
       }
+
+      .editorial-system{
+        height:480px;
+      }
+
+      .editorial-center{
+
+        width:90%;
+
+        padding:28px;
+      }
+
+      .editorial-center h3{
+
+        font-size:24px;
+        line-height:34px;
+      }
+
+      .floating-word{
+
+        padding:10px 16px;
+
+        font-size:11px;
+      }
     }
 
     @media(max-width:480px){
@@ -919,8 +950,7 @@
       }
 
       .about-card,
-      .exp-card,
-      .contact-form{
+      .exp-card{
         padding:25px;
       }
     }
@@ -961,7 +991,7 @@
     <div class="hero-content">
 
       <div class="small-text">
-        PR • DIGITAL STORYTELLING • CREATIVE CULTURE • MEDIA STRATEGY • COPYWRITING • DIGITAL MARKETING
+        PR • DIGITAL STORYTELLING • CREATIVE CULTURE • DIGITAL MARKETING • MEDIA STRATEGY • COPYWRITING
       </div>
 
       <h1>
@@ -969,20 +999,20 @@
         that feel alive,
         emotional &
         culturally relevant.
+
       </h1>
 
       <p>
         Public relations and media communication
         professional blending storytelling,
         visual aesthetics, strategy, and digital
-        culture to create meaningful brand narratives.
+        culture into meaningful brand narratives.
       </p>
 
       <div class="buttons">
 
         <a
-          href="https://drive.google.com/file/d/11EZ9NDcQkspfaRrOVSXWcUbsWz-eu3Ky/view?usp=drive_link"
-          target="resumeFrame"
+          href="#"
           class="btn primary-btn"
           onclick="openResume(event)">
 
@@ -1047,13 +1077,13 @@
     <div class="about-card glass">
 
       <p>
-        I come from an artistic and communication driven
+        I come from an artistic and communication-driven
         background where storytelling, visuals, emotion,
-        and culture shape the way audiences connect with
-        brands. My work blends public relations,
-        media strategy, digital communication,
-        and creative storytelling into experiences
-        that feel authentic and impactful. Shapping narratives through
+        and culture shape how audiences connect with brands.
+        My work blends public relations, digital strategy,
+        media communication, and creative storytelling into
+        experiences that feel authentic and impactful.
+        Shapping narratives through
         art of storytelling, visual aesthetics, and strategy is my forte
         with my skills and expertise in public relations, digital marketing,
         media strategy, and creative storytelling. I can help the brand build a 
@@ -1083,9 +1113,8 @@
 
         <p>
           Assisted in PR campaigns, communication strategy,
-          brand storytelling, and media relations.
-          Working along the Honda team learned usefull Pr-practices.
-          Handling and managing PR projects. Crafted and curated a influencer
+          media monitoring, influencer outreach, and
+          storytelling-focused brand communication.Crafted and curated a influencer
           list for brand, did brand awarness used new-gen ai tools and platforms
           for media management and media monitoring with the strong understanding of
           research and analysis created reports for the brand.
@@ -1102,8 +1131,8 @@
 
         <p>
           Worked on narrative analysis, campaign tracking,
-          and media communication strategies.
-          Analyzed media coverage and created
+          media monitoring, and communication strategy
+          during election campaigns.Analyzed media coverage and created
           engaging narratives for the campaign.
           Worked as a media monitoring partner always
           keeping an eye on the media coverage. when every headline
@@ -1120,8 +1149,8 @@
         </div>
 
         <p>
-          Created SEO content and digital storytelling
-          focused communication for online audiences.
+          Created SEO content and storytelling-driven
+          communication for digital audiences.
         </p>
 
       </div>
@@ -1148,12 +1177,6 @@
       <div class="skill">SEO Content</div>
       <div class="skill">Audience Engagement</div>
       <div class="skill">Digital Communication</div>
-        <div class="skill">Campaign Management</div>
-        <div class="skill">Media Monitoring</div>
-        <div class="skill">Influencer Outreach</div>
-        <div class="skill">Research & Analysis</div>
-        <div class="skill">Brand Awareness</div>
-        <div class="skill">Content Writing</div>
 
     </div>
 
@@ -1199,64 +1222,62 @@
 
       </div>
 
-      <!-- FORM -->
+      <!-- RIGHT -->
 
-      <form
-        name="contact"
-        method="POST"
-        data-netlify="true"
-        data-netlify-honeypot="bot-field"
-        action="/success.html"
-        class="contact-form glass">
+      <div
+      class="editorial-system"
+      id="editorialSystem">
 
-        <input
-          type="hidden"
-          name="form-name"
-          value="contact">
+        <div class="editorial-center glass">
 
-        <p hidden>
-          <input name="bot-field">
-        </p>
+          <span class="editorial-small">
+            CREATIVE COMMUNICATION
+          </span>
 
-        <div class="form-group">
-
-          <input
-            type="text"
-            name="name"
-            placeholder="Your Name"
-            required>
+          <h3>
+            Creating stories that feel emotional,
+            human & culturally relevant.
+          </h3>
 
         </div>
 
-        <div class="form-group">
-
-          <input
-            type="email"
-            name="email"
-            placeholder="Your Email"
-            required>
-
+        <div class="floating-word">
+          STORYTELLING
         </div>
 
-        <div class="form-group">
-
-          <textarea
-            name="message"
-            rows="6"
-            placeholder="Write your message..."
-            required></textarea>
-
+        <div class="floating-word">
+          CULTURE
         </div>
 
-        <button
-          type="submit"
-          class="submit-btn">
+        <div class="floating-word">
+          DIGITAL
+        </div>
 
-          Send Message
+        <div class="floating-word">
+          PR
+        </div>
 
-        </button>
+        <div class="floating-word">
+          BRANDING
+        </div>
 
-      </form>
+        <div class="floating-word">
+          MEDIA
+        </div>
+
+        <div class="floating-word">
+          VOICE
+        </div>
+
+        <div class="floating-word">
+          CREATIVE
+        </div>
+
+        <div class="floating-word">
+          NARRATIVE
+        </div>
+
+      </div>
 
     </div>
 
@@ -1271,7 +1292,7 @@
     </p>
 
     <div>
-      LinkedIn • Instagram 
+      LinkedIn • Instagram
     </div>
 
   </footer>
@@ -1288,15 +1309,6 @@
         ← Back to Portfolio
       </button>
 
-      <a
-        href="Akashay_Kumar_Resume.pdf"
-        download
-        class="download-btn">
-
-        Download Resume
-
-      </a>
-
     </div>
 
     <iframe
@@ -1310,7 +1322,7 @@
 
   <script>
 
-    // MOBILE MENU
+    // MOBILE NAV
 
     const menuBtn =
     document.getElementById("menuBtn");
@@ -1321,19 +1333,6 @@
     menuBtn.addEventListener("click", () => {
 
       navLinks.classList.toggle("active");
-
-    });
-
-    document
-    .querySelectorAll(".nav-links a")
-
-    .forEach(link => {
-
-      link.addEventListener("click", () => {
-
-        navLinks.classList.remove("active");
-
-      });
 
     });
 
@@ -1350,14 +1349,121 @@
       document.getElementById("resumeFrame");
 
       frame.src =
-      "frame.src = "https://drive.google.com/file/d/11EZ9NDcQkspfaRrOVSXWcUbsWz-eu3Ky/view?usp=drive_link";
+      "https://drive.google.com/file/d/11EZ9NDcQkspfaRrOVSXWcUbsWz-eu3Ky/preview";
 
       overlay.style.display = "flex";
 
       document.body.style.overflow = "hidden";
     }
 
-   
+    function closeResume(){
+
+      const overlay =
+      document.getElementById("resumeOverlay");
+
+      const frame =
+      document.getElementById("resumeFrame");
+
+      overlay.style.display = "none";
+
+      frame.src = "";
+
+      document.body.style.overflow = "auto";
+    }
+
+    // FLOATING TYPOGRAPHY
+
+    const words =
+    document.querySelectorAll(".floating-word");
+
+    const editorialSystem =
+    document.getElementById("editorialSystem");
+
+    let paused = false;
+
+    const positions = [
+
+      {top:"8%", left:"8%"},
+      {top:"10%", left:"68%"},
+
+      {top:"28%", left:"10%"},
+      {top:"30%", left:"70%"},
+
+      {top:"68%", left:"12%"},
+      {top:"70%", left:"68%"},
+
+      {top:"85%", left:"18%"},
+      {top:"82%", left:"62%"},
+
+      {top:"48%", left:"4%"}
+
+    ];
+
+    function shuffle(array){
+
+      return array
+      .map(value => ({
+        value,
+        sort:Math.random()
+      }))
+
+      .sort((a,b) => a.sort - b.sort)
+
+      .map(({value}) => value);
+
+    }
+
+    function rearrangeWords(){
+
+      if(paused) return;
+
+      const shuffled =
+      shuffle([...positions]);
+
+      words.forEach((word,index) => {
+
+        const pos =
+        shuffled[index];
+
+        const rotate =
+        (Math.random() * 8) - 4;
+
+        word.style.top =
+        pos.top;
+
+        word.style.left =
+        pos.left;
+
+        word.style.transform =
+        `rotate(${rotate}deg)`;
+
+      });
+
+    }
+
+    rearrangeWords();
+
+    setInterval(
+    rearrangeWords,
+    2800
+    );
+
+    editorialSystem.addEventListener(
+    "mouseenter",
+    () => {
+
+      paused = true;
+
+    });
+
+    editorialSystem.addEventListener(
+    "mouseleave",
+    () => {
+
+      paused = false;
+
+    });
+
   </script>
 
 </body>
