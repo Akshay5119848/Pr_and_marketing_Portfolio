@@ -23,6 +23,8 @@
     href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap"
     rel="stylesheet">
 
+    <link rel="icon" type="image/PNG" href="letter-a.png">
+
   <!-- FONT AWESOME -->
 
   <link
@@ -73,7 +75,7 @@
       position:relative;
     }
 
-    /* BACKGROUND GLOW */
+    /* BACKGROUND LIGHTS */
 
     body::before{
 
@@ -85,14 +87,14 @@
       background:
       radial-gradient(
       circle at top left,
-      rgba(255,255,255,0.2),
+      rgba(255,255,255,0.18),
       transparent 30%
       ),
 
       radial-gradient(
       circle at bottom right,
-      rgba(255,255,255,0.1),
-      transparent 30%
+      rgba(255,255,255,0.12),
+      transparent 35%
       );
 
       z-index:-2;
@@ -331,9 +333,7 @@
     }
 
     .secondary-btn:hover{
-
-      transform:
-      translateY(-6px);
+      transform:translateY(-6px);
     }
 
     /* SOCIALS */
@@ -417,6 +417,8 @@
       border-radius:28px;
 
       display:block;
+
+      object-fit:cover;
     }
 
     /* SECTION */
@@ -456,7 +458,7 @@
       rgba(255,255,255,0.85);
     }
 
-    /* GLASS CARD */
+    /* GLASS */
 
     .glass{
 
@@ -505,9 +507,7 @@
     }
 
     .exp-card:hover{
-
-      transform:
-      translateY(-8px);
+      transform:translateY(-8px);
     }
 
     .exp-top{
@@ -653,26 +653,24 @@
       backdrop-filter:blur(24px);
 
       box-shadow:
-      0 20px 60px rgba(0,0,0,0.2);
+      0 20px 60px rgba(0, 0, 0, 0.82);
+
+      display:flex;
+      justify-content:center;
+      align-items:center;
     }
 
     /* CENTER CARD */
 
     .editorial-center{
 
-      position:absolute;
-
-      top:50%;
-      left:50%;
-
-      transform:
-      translate(-50%,-50%);
+      position:relative;
 
       width:340px;
 
       padding:42px;
 
-      z-index:20;
+      z-index:10;
 
       text-align:center;
     }
@@ -698,23 +696,91 @@
       font-size:30px;
 
       line-height:42px;
+
+      color:white;
     }
 
-    /* FLOATING WORDS */
+    /* MARQUEE */
 
-    .floating-word{
+    .marquee{
 
       position:absolute;
+
+      width:140%;
+
+      overflow:hidden;
+
+      white-space:nowrap;
+
+      padding:18px 0;
+
+      background:
+      rgba(0,0,0,0.32);
+
+      border-top:
+      1px solid rgba(255,255,255,0.08);
+
+      border-bottom:
+      1px solid rgba(8, 0, 0, 0.921);
+
+      backdrop-filter:blur(20px);
+
+      box-shadow:
+      0 10px 30px rgba(0,0,0,0.15);
+
+      mask-image:
+      linear-gradient(
+      to right,
+      transparent,
+      black 0%,
+      black 90%,
+      transparent
+      );
+    }
+
+    .marquee-top{
+      top:30px;
+    }
+
+    .marquee-bottom{
+      bottom:30px;
+    }
+
+    /* TRACK */
+
+    .marquee-track{
+
+      display:flex;
+
+      width:max-content;
+
+      gap:20px;
+
+      animation:
+      marqueeMove 18s linear infinite;
+    }
+
+    .marquee-track.reverse{
+
+      animation:
+      marqueeReverse 18s linear infinite;
+    }
+
+    /* WORDS */
+
+    .marquee-track span{
 
       padding:14px 24px;
 
       border-radius:60px;
 
       background:
-      rgba(255,255,255,0.10);
+      rgba(255,255,255,0.08);
 
       border:
-      1px solid rgba(255,255,255,0.14);
+      1px solid rgba(255,255,255,0.12);
+
+      backdrop-filter:blur(18px);
 
       color:white;
 
@@ -723,19 +789,46 @@
 
       letter-spacing:2px;
 
-      white-space:nowrap;
-
-      transition:
-      all 2.2s cubic-bezier(.17,.67,.31,1.05);
+      transition:.3s;
     }
 
-    .floating-word:hover{
-
-      transform:
-      scale(1.05);
+    .marquee-track span:hover{
 
       background:
-      rgba(255,255,255,0.18);
+      rgba(255,255,255,0.16);
+
+      transform:
+      translateY(-2px);
+    }
+
+    /* ANIMATION */
+
+    @keyframes marqueeMove{
+
+      0%{
+        transform:translateX(0%);
+      }
+
+      100%{
+        transform:translateX(-50%);
+      }
+    }
+
+    @keyframes marqueeReverse{
+
+      0%{
+        transform:translateX(-50%);
+      }
+
+      100%{
+        transform:translateX(0%);
+      }
+    }
+
+    /* HOVER PAUSE */
+
+    .editorial-system:hover .marquee-track{
+      animation-play-state:paused;
     }
 
     /* FOOTER */
@@ -906,7 +999,7 @@
       }
 
       .editorial-system{
-        height:480px;
+        height:460px;
       }
 
       .editorial-center{
@@ -922,11 +1015,21 @@
         line-height:34px;
       }
 
-      .floating-word{
+      .marquee-top{
+        top:50px;
+      }
 
-        padding:10px 16px;
+      .marquee-bottom{
+        bottom:50px;
+      }
+
+      .marquee-track span{
+
+        padding:10px 18px;
 
         font-size:11px;
+
+        letter-spacing:1px;
       }
     }
 
@@ -991,7 +1094,7 @@
     <div class="hero-content">
 
       <div class="small-text">
-        PR • DIGITAL STORYTELLING • CREATIVE CULTURE • DIGITAL MARKETING • MEDIA STRATEGY • COPYWRITING
+        PR • DIGITAL STORYTELLING • CREATIVE CULTURE
       </div>
 
       <h1>
@@ -999,7 +1102,6 @@
         that feel alive,
         emotional &
         culturally relevant.
-
       </h1>
 
       <p>
@@ -1077,17 +1179,7 @@
     <div class="about-card glass">
 
       <p>
-        I come from an artistic and communication-driven
-        background where storytelling, visuals, emotion,
-        and culture shape how audiences connect with brands.
-        My work blends public relations, digital strategy,
-        media communication, and creative storytelling into
-        experiences that feel authentic and impactful.
-        Shapping narratives through
-        art of storytelling, visual aesthetics, and strategy is my forte
-        with my skills and expertise in public relations, digital marketing,
-        media strategy, and creative storytelling. I can help the brand build a 
-        presence that resonates with audiences and engages them in meaningful ways.
+       I come from an artistic and communication-driven background where storytelling, visuals, emotion, and culture shape how audiences connect with brands. My work blends public relations, digital strategy, media communication, and creative storytelling into experiences that feel authentic and impactful. Shapping narratives through art of storytelling, visual aesthetics, and strategy is my forte with my skills and expertise in public relations, digital marketing, media strategy, and creative storytelling. I can help the brand build a presence that resonates with audiences and engages them in meaningful ways.
       </p>
 
     </div>
@@ -1112,12 +1204,7 @@
         </div>
 
         <p>
-          Assisted in PR campaigns, communication strategy,
-          media monitoring, influencer outreach, and
-          storytelling-focused brand communication.Crafted and curated a influencer
-          list for brand, did brand awarness used new-gen ai tools and platforms
-          for media management and media monitoring with the strong understanding of
-          research and analysis created reports for the brand.
+         Assisted in PR campaigns, communication strategy, media monitoring, influencer outreach, and storytelling-focused brand communication.Crafted and curated a influencer list for brand, did brand awarness used new-gen ai tools and platforms for media management and media monitoring with the strong understanding of research and analysis created reports for the brand.
         </p>
 
       </div>
@@ -1130,13 +1217,7 @@
         </div>
 
         <p>
-          Worked on narrative analysis, campaign tracking,
-          media monitoring, and communication strategy
-          during election campaigns.Analyzed media coverage and created
-          engaging narratives for the campaign.
-          Worked as a media monitoring partner always
-          keeping an eye on the media coverage. when every headline
-          was important worked for BJNY and election 2024.
+         Worked on narrative analysis, campaign tracking, media monitoring, and communication strategy during election campaigns.Analyzed media coverage and created engaging narratives for the campaign. Worked as a media monitoring partner always keeping an eye on the media coverage. when every headline was important worked for BJNY and election 2024.
         </p>
 
       </div>
@@ -1150,7 +1231,11 @@
 
         <p>
           Created SEO content and storytelling-driven
-          communication for digital audiences.
+          communication for digital audiences. Worked on
+          curating and crafting web content for GKFTII website and Social Media.
+          Helping them build a strong online presence and audience engagement.
+          With a focus on storytelling and audience
+          engagement.
         </p>
 
       </div>
@@ -1177,6 +1262,19 @@
       <div class="skill">SEO Content</div>
       <div class="skill">Audience Engagement</div>
       <div class="skill">Digital Communication</div>
+      <div class="skill">Social Media Management</div>
+      <div class="skill">Content Marketing</div>
+      <div class="skill">Digital Marketing</div>
+      <div class="skill">Influencer Outreach</div>
+      <div class="skill">Brand Awareness</div>
+      <div class="skill">Digital Marketing</div>
+      <div class="skill">Media Monitoring</div>
+      <div class="skill">Campaign Tracking</div>
+      <div class="skill">Media Coverage Analysis</div>
+      <div class="skill">Content Writing</div>
+      <div class="skill">SEO Optimization</div>
+      <div class="skill">Communication Strategy</div>
+      <div class="skill">Narrative Analysis</div>
 
     </div>
 
@@ -1224,9 +1322,33 @@
 
       <!-- RIGHT -->
 
-      <div
-      class="editorial-system"
-      id="editorialSystem">
+      <div class="editorial-system">
+
+        <!-- TOP -->
+
+        <div class="marquee marquee-top">
+
+          <div class="marquee-track">
+
+            <span>CREATIVE-WRITING</span>
+            <span>BRANDING</span>
+            <span>STORYTELLING</span>
+            <span>COMMUNICATION</span>
+            <span>PR</span>
+            <span>MARKETING</span>
+
+            <span>COPYWRITING</span>
+            <span>STORYTELLING</span>
+            <span>MEDIA MANAGEMENT</span>
+          <span>PUBLIC-RELATIONS</span>
+            <span>STRATEGY-COMMUNICATION</span>
+            <span>DIGITAL-Marketing</span>
+
+          </div>
+
+        </div>
+
+        <!-- CENTER -->
 
         <div class="editorial-center glass">
 
@@ -1241,40 +1363,28 @@
 
         </div>
 
-        <div class="floating-word">
-          STORYTELLING
-        </div>
+        <!-- BOTTOM -->
 
-        <div class="floating-word">
-          CULTURE
-        </div>
+        <div class="marquee marquee-bottom">
 
-        <div class="floating-word">
-          DIGITAL
-        </div>
+          <div class="marquee-track reverse">
 
-        <div class="floating-word">
-          PR
-        </div>
+            <span>CREATIVE-WRITING</span>
+            <span>BRANDING</span>
+            <span>STORYTELLING</span>
+            <span>COMMUNICATION</span>
+            <span>PR</span>
+            <span>MARKETING</span>
 
-        <div class="floating-word">
-          BRANDING
-        </div>
+            <span>COPYWRITING</span>
+            <span>STORYTELLING</span>
+            <span>MEDIA MANAGEMENT</span>
+          <span>PUBLIC-RELATIONS</span>
+            <span>STRATEGY-COMMUNICATION</span>
+            <span>DIGITAL-Marketing</span>
 
-        <div class="floating-word">
-          MEDIA
-        </div>
+          </div>
 
-        <div class="floating-word">
-          VOICE
-        </div>
-
-        <div class="floating-word">
-          CREATIVE
-        </div>
-
-        <div class="floating-word">
-          NARRATIVE
         </div>
 
       </div>
@@ -1370,99 +1480,6 @@
 
       document.body.style.overflow = "auto";
     }
-
-    // FLOATING TYPOGRAPHY
-
-    const words =
-    document.querySelectorAll(".floating-word");
-
-    const editorialSystem =
-    document.getElementById("editorialSystem");
-
-    let paused = false;
-
-    const positions = [
-
-      {top:"8%", left:"8%"},
-      {top:"10%", left:"68%"},
-
-      {top:"28%", left:"10%"},
-      {top:"30%", left:"70%"},
-
-      {top:"68%", left:"12%"},
-      {top:"70%", left:"68%"},
-
-      {top:"85%", left:"18%"},
-      {top:"82%", left:"62%"},
-
-      {top:"48%", left:"4%"}
-
-    ];
-
-    function shuffle(array){
-
-      return array
-      .map(value => ({
-        value,
-        sort:Math.random()
-      }))
-
-      .sort((a,b) => a.sort - b.sort)
-
-      .map(({value}) => value);
-
-    }
-
-    function rearrangeWords(){
-
-      if(paused) return;
-
-      const shuffled =
-      shuffle([...positions]);
-
-      words.forEach((word,index) => {
-
-        const pos =
-        shuffled[index];
-
-        const rotate =
-        (Math.random() * 8) - 4;
-
-        word.style.top =
-        pos.top;
-
-        word.style.left =
-        pos.left;
-
-        word.style.transform =
-        `rotate(${rotate}deg)`;
-
-      });
-
-    }
-
-    rearrangeWords();
-
-    setInterval(
-    rearrangeWords,
-    2800
-    );
-
-    editorialSystem.addEventListener(
-    "mouseenter",
-    () => {
-
-      paused = true;
-
-    });
-
-    editorialSystem.addEventListener(
-    "mouseleave",
-    () => {
-
-      paused = false;
-
-    });
 
   </script>
 
