@@ -3,1485 +3,1511 @@
 
 <head>
 
-  <meta charset="UTF-8" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0" />
+<title>Akashay Kumar | Creative PR Portfolio</title>
 
-  <title>
-    Akashay Kumar | Portfolio
-  </title>
+<link rel="icon" type="image/png" href="favicon.png">
 
-  <!-- GOOGLE FONTS -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet">
+<style>
 
-    <link rel="icon" type="image/PNG" href="letter-a.png">
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
 
-  <!-- FONT AWESOME -->
+:root{
 
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+--white:#ffffff;
+--glass:rgba(255,255,255,0.08);
+--border:rgba(255,255,255,0.12);
 
-  <style>
+}
 
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      scroll-behavior:smooth;
-    }
+body{
 
-    :root{
+font-family:'Inter',sans-serif;
 
-      --text:#f5f5f5;
+background:
+linear-gradient(
+135deg,
+#ff3b3b 0%,
+#2563eb 45%,
+#00c16a 100%
+);
 
-      --glass:
-      rgba(255,255,255,0.08);
+overflow-x:hidden;
 
-      --glass-border:
-      rgba(255,255,255,0.14);
+color:white;
 
-      --shadow:
-      0 10px 40px rgba(0,0,0,0.22);
-    }
+position:relative;
 
-    body{
+min-height:100vh;
+}
 
-      font-family:'Outfit',sans-serif;
+/* ========================= */
+/* GRAIN OVERLAY */
+/* ========================= */
 
-      color:var(--text);
+body::before{
 
-      overflow-x:hidden;
+content:"";
 
-      background:
-      linear-gradient(
-      135deg,
-      #ff3b3b 0%,
-      #2563eb 45%,
-      #00c16a 100%
-      );
+position:fixed;
+inset:0;
 
-      min-height:100vh;
+background-image:
+url("https://grainy-gradients.vercel.app/noise.svg");
 
-      position:relative;
-    }
+opacity:.12;
 
-    /* BACKGROUND LIGHTS */
+mix-blend-mode:overlay;
 
-    body::before{
+pointer-events:none;
 
-      content:"";
+z-index:2;
+}
 
-      position:fixed;
-      inset:0;
+/* ========================= */
+/* AMBIENT LIGHT */
+/* ========================= */
 
-      background:
-      radial-gradient(
-      circle at top left,
-      rgba(255,255,255,0.18),
-      transparent 30%
-      ),
+.ambient{
 
-      radial-gradient(
-      circle at bottom right,
-      rgba(255,255,255,0.12),
-      transparent 35%
-      );
+position:fixed;
 
-      z-index:-2;
-    }
+border-radius:50%;
 
-    /* GLASS OVERLAY */
+filter:blur(140px);
 
-    body::after{
+opacity:.45;
 
-      content:"";
+pointer-events:none;
 
-      position:fixed;
-      inset:0;
+animation:
+float 14s ease-in-out infinite;
 
-      background:
-      rgba(255,255,255,0.02);
+z-index:-2;
+}
 
-      backdrop-filter:blur(60px);
+.a1{
+width:420px;
+height:420px;
+background:#ff3366;
+top:-120px;
+left:-100px;
+}
 
-      z-index:-1;
-    }
+.a2{
+width:500px;
+height:500px;
+background:#2563eb;
+bottom:-180px;
+right:-120px;
+animation-delay:3s;
+}
 
-    a{
-      text-decoration:none;
-      color:inherit;
-    }
+.a3{
+width:340px;
+height:340px;
+background:#00d084;
+top:40%;
+left:40%;
+animation-delay:6s;
+}
 
-    /* NAVBAR */
+@keyframes float{
 
-    nav{
+0%,100%{
+transform:
+translate(0,0)
+scale(1);
+}
 
-      width:100%;
+50%{
+transform:
+translate(40px,-50px)
+scale(1.12);
+}
+}
 
-      position:fixed;
-      top:0;
-      left:0;
+/* ========================= */
+/* CURSOR LIGHT */
+/* ========================= */
 
-      padding:24px 7%;
+.cursor-light{
 
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
+position:fixed;
 
-      background:
-      rgba(255,255,255,0.08);
+width:260px;
+height:260px;
 
-      border-bottom:
-      1px solid rgba(255,255,255,0.08);
+border-radius:50%;
 
-      backdrop-filter:blur(22px);
+background:
+radial-gradient(
+circle,
+rgba(255,255,255,0.18),
+transparent 70%
+);
 
-      z-index:9999;
-    }
+pointer-events:none;
 
-    .logo{
+mix-blend-mode:screen;
 
-      font-family:'Syne',sans-serif;
+transform:
+translate(-50%,-50%);
 
-      font-size:34px;
-      font-weight:800;
+z-index:3;
+}
 
-      color:white;
-    }
+/* ========================= */
+/* NAVBAR */
+/* ========================= */
 
-    .nav-links{
+nav{
 
-      display:flex;
-      gap:35px;
-    }
+position:fixed;
 
-    .nav-links a{
+top:0;
+left:0;
 
-      color:
-      rgba(255,255,255,0.85);
+width:100%;
 
-      font-size:14px;
+padding:26px 7%;
 
-      position:relative;
+display:flex;
+justify-content:space-between;
+align-items:center;
 
-      transition:.3s;
-    }
+z-index:9999;
 
-    .nav-links a:hover{
-      color:white;
-    }
+backdrop-filter:blur(24px);
 
-    .nav-links a::after{
+background:
+rgba(255,255,255,0.06);
 
-      content:"";
+border-bottom:
+1px solid rgba(255,255,255,0.08);
 
-      position:absolute;
+transition:.4s;
+}
 
-      left:0;
-      bottom:-6px;
+.logo{
 
-      width:0%;
-      height:2px;
+font-family:'Syne',sans-serif;
 
-      background:white;
+font-size:34px;
+font-weight:800;
 
-      transition:.3s;
-    }
+letter-spacing:1px;
+}
 
-    .nav-links a:hover::after{
-      width:100%;
-    }
+.nav-links{
 
-    .menu-btn{
-      display:none;
-      font-size:24px;
-      cursor:pointer;
-    }
+display:flex;
+gap:40px;
+}
 
-    /* HERO */
+.nav-links a{
 
-    .hero{
+text-decoration:none;
 
-      min-height:100vh;
+color:
+rgba(255,255,255,0.84);
 
-      padding:
-      170px 7% 80px;
+font-size:14px;
 
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
+position:relative;
 
-      gap:80px;
-      flex-wrap:wrap;
-    }
+transition:.3s;
+}
 
-    .hero-content{
-      flex:1;
-      min-width:320px;
-    }
+.nav-links a:hover{
+color:white;
+}
 
-    .small-text{
+.nav-links a::after{
 
-      text-transform:uppercase;
+content:"";
 
-      letter-spacing:5px;
+position:absolute;
 
-      margin-bottom:25px;
+left:0;
+bottom:-7px;
 
-      font-size:13px;
+width:0%;
+height:2px;
 
-      color:
-      rgba(255,255,255,0.85);
-    }
+background:white;
 
-    .hero h1{
+transition:.4s;
+}
 
-      font-family:'Syne',sans-serif;
+.nav-links a:hover::after{
+width:100%;
+}
 
-      font-size:88px;
-      line-height:92px;
+/* ========================= */
+/* HERO */
+/* ========================= */
 
-      margin-bottom:30px;
+.hero{
 
-      text-shadow:
-      0 10px 30px rgba(0,0,0,0.2);
-    }
+min-height:100vh;
 
-    .hero p{
+padding:
+180px 7% 120px;
 
-      font-size:18px;
+display:grid;
 
-      line-height:36px;
+grid-template-columns:
+1.1fr .9fr;
 
-      max-width:650px;
+gap:80px;
 
-      color:
-      rgba(255,255,255,0.9);
+align-items:center;
 
-      margin-bottom:45px;
-    }
+position:relative;
+}
 
-    /* BUTTONS */
+/* ========================= */
+/* LEFT */
+/* ========================= */
 
-    .buttons{
-      display:flex;
-      gap:20px;
-      flex-wrap:wrap;
-    }
+.hero-left{
 
-    .btn{
+position:relative;
 
-      padding:16px 34px;
+z-index:5;
+}
 
-      border-radius:60px;
+.mini{
 
-      border:none;
+letter-spacing:5px;
 
-      cursor:pointer;
+font-size:13px;
 
-      font-size:15px;
-      font-weight:700;
+text-transform:uppercase;
 
-      transition:.4s;
-    }
+margin-bottom:30px;
 
-    .primary-btn{
+color:
+rgba(255,255,255,0.75);
+}
 
-      background:
-      rgba(255,255,255,0.16);
+.hero h1{
 
-      border:
-      1px solid rgba(255,255,255,0.18);
+font-family:'Syne',sans-serif;
 
-      backdrop-filter:blur(18px);
+font-size:104px;
 
-      color:white;
+line-height:104px;
 
-      box-shadow:var(--shadow);
-    }
+margin-bottom:32px;
 
-    .primary-btn:hover{
+letter-spacing:-4px;
 
-      transform:
-      translateY(-6px);
+text-shadow:
+0 0 20px rgba(255,255,255,0.16);
 
-      background:
-      rgba(255,255,255,0.24);
-    }
+animation:
+heroFloat 6s ease-in-out infinite;
+}
 
-    .secondary-btn{
+@keyframes heroFloat{
 
-      background:
-      rgba(255,255,255,0.08);
+0%,100%{
+transform:translateY(0px);
+}
 
-      border:
-      1px solid rgba(255,255,255,0.14);
+50%{
+transform:translateY(-8px);
+}
+}
 
-      backdrop-filter:blur(18px);
+.hero p{
 
-      color:white;
-    }
+font-size:19px;
 
-    .secondary-btn:hover{
-      transform:translateY(-6px);
-    }
+line-height:38px;
 
-    /* SOCIALS */
+max-width:720px;
 
-    .socials{
+color:
+rgba(255,255,255,0.88);
 
-      display:flex;
-      gap:18px;
+margin-bottom:45px;
+}
 
-      margin-top:50px;
-    }
+/* ========================= */
+/* BUTTONS */
+/* ========================= */
 
-    .socials a{
+.buttons{
 
-      width:56px;
-      height:56px;
+display:flex;
+gap:22px;
+flex-wrap:wrap;
+}
 
-      display:flex;
-      justify-content:center;
-      align-items:center;
+.btn{
 
-      border-radius:50%;
+position:relative;
 
-      background:var(--glass);
+overflow:hidden;
 
-      border:
-      1px solid var(--glass-border);
+padding:18px 36px;
 
-      backdrop-filter:blur(18px);
+border-radius:70px;
 
-      transition:.4s;
-    }
+border:none;
 
-    .socials a:hover{
+cursor:pointer;
 
-      transform:
-      translateY(-6px)
-      scale(1.05);
+font-size:15px;
+font-weight:700;
 
-      background:
-      rgba(255,255,255,0.2);
-    }
+color:white;
 
-    /* IMAGE */
+transition:.45s;
 
-    .hero-image{
+backdrop-filter:blur(24px);
+}
 
-      flex:1;
+.btn::before{
 
-      display:flex;
-      justify-content:center;
+content:"";
 
-      min-width:320px;
-    }
+position:absolute;
 
-    .image-box{
+inset:0;
 
-      padding:20px;
+background:
+linear-gradient(
+120deg,
+transparent,
+rgba(255,255,255,0.24),
+transparent
+);
 
-      border-radius:40px;
+transform:translateX(-100%);
 
-      background:
-      rgba(255,255,255,0.10);
+transition:1s;
+}
 
-      border:
-      1px solid rgba(255,255,255,0.16);
+.btn:hover::before{
+transform:translateX(100%);
+}
 
-      backdrop-filter:blur(25px);
+.btn:hover{
 
-      box-shadow:
-      0 20px 60px rgba(0,0,0,0.22);
+transform:
+translateY(-7px)
+scale(1.04);
+}
 
-      transform:rotate(-2deg);
-    }
+.primary{
 
-    .image-box img{
+background:
+rgba(255,255,255,0.14);
 
-      width:430px;
-      max-width:100%;
+border:
+1px solid rgba(255,255,255,0.16);
+}
 
-      border-radius:28px;
+.secondary{
 
-      display:block;
+background:
+rgba(255,255,255,0.06);
 
-      object-fit:cover;
-    }
+border:
+1px solid rgba(255,255,255,0.10);
+}
 
-    /* SECTION */
+/* ========================= */
+/* SOCIALS */
+/* ========================= */
 
-    section{
-      padding:100px 7%;
-    }
+.socials{
 
-    .section-title{
+display:flex;
+gap:16px;
 
-      font-family:'Syne',sans-serif;
+margin-top:50px;
+}
 
-      font-size:56px;
+.socials a{
 
-      margin-bottom:60px;
+width:58px;
+height:58px;
 
-      display:inline-block;
+display:flex;
+justify-content:center;
+align-items:center;
 
-      position:relative;
-    }
+border-radius:50%;
 
-    .section-title::after{
+text-decoration:none;
 
-      content:"";
+color:white;
 
-      position:absolute;
+background:
+rgba(255,255,255,0.08);
 
-      left:0;
-      bottom:-10px;
+border:
+1px solid rgba(255,255,255,0.12);
 
-      width:90px;
-      height:4px;
+backdrop-filter:blur(18px);
 
-      border-radius:20px;
+transition:.4s;
+}
 
-      background:
-      rgba(255,255,255,0.85);
-    }
+.socials a:hover{
 
-    /* GLASS */
+transform:
+translateY(-6px)
+scale(1.06);
 
-    .glass{
+background:
+rgba(255,255,255,0.18);
+}
 
-      background:
-      rgba(255,255,255,0.10);
+/* ========================= */
+/* RIGHT VISUAL */
+/* ========================= */
 
-      border:
-      1px solid rgba(255,255,255,0.16);
+.hero-right{
 
-      backdrop-filter:blur(24px);
+position:relative;
 
-      border-radius:34px;
+display:flex;
+justify-content:center;
+align-items:center;
+}
 
-      box-shadow:
-      0 20px 60px rgba(0,0,0,0.15);
-    }
+/* GLASS FRAME */
 
-    /* ABOUT */
+.visual-frame{
 
-    .about-card{
-      padding:50px;
-    }
+position:relative;
 
-    .about-card p{
+width:470px;
+height:620px;
 
-      font-size:18px;
-      line-height:36px;
+border-radius:42px;
 
-      color:
-      rgba(255,255,255,0.92);
-    }
+background:
+rgba(255,255,255,0.08);
 
-    /* EXPERIENCE */
+border:
+1px solid rgba(255,255,255,0.12);
 
-    .exp-wrap{
-      display:flex;
-      flex-direction:column;
-      gap:28px;
-    }
+backdrop-filter:blur(30px);
 
-    .exp-card{
+overflow:hidden;
 
-      padding:35px;
+box-shadow:
+0 20px 80px rgba(0,0,0,0.2);
 
-      transition:.4s;
-    }
+transform-style:preserve-3d;
 
-    .exp-card:hover{
-      transform:translateY(-8px);
-    }
+animation:
+frameFloat 8s ease-in-out infinite;
+}
 
-    .exp-top{
+@keyframes frameFloat{
 
-      display:flex;
-      justify-content:space-between;
-      flex-wrap:wrap;
+0%,100%{
+transform:
+translateY(0px)
+rotate(-2deg);
+}
 
-      gap:20px;
+50%{
+transform:
+translateY(-12px)
+rotate(1deg);
+}
+}
 
-      margin-bottom:18px;
-    }
+/* IMAGE */
 
-    .exp-card h3{
-      font-size:28px;
-    }
+.visual-frame img{
 
-    .exp-card span{
-      color:rgba(255,255,255,0.75);
-    }
+width:100%;
+height:100%;
 
-    .exp-card p{
+object-fit:cover;
 
-      line-height:32px;
+opacity:.94;
+}
 
-      color:
-      rgba(255,255,255,0.9);
-    }
+/* LIGHT SWEEP */
 
-    /* SKILLS */
+.visual-frame::before{
 
-    .skills{
+content:"";
 
-      display:flex;
-      flex-wrap:wrap;
-      gap:18px;
-    }
+position:absolute;
 
-    .skill{
+top:-120%;
+left:-40%;
 
-      padding:15px 25px;
+width:180%;
+height:180%;
 
-      border-radius:60px;
+background:
+linear-gradient(
+120deg,
+transparent,
+rgba(255,255,255,0.22),
+transparent
+);
 
-      background:
-      rgba(255,255,255,0.10);
+transform:rotate(25deg);
 
-      border:
-      1px solid rgba(255,255,255,0.16);
+animation:
+sweep 8s linear infinite;
+}
 
-      backdrop-filter:blur(18px);
+@keyframes sweep{
 
-      transition:.4s;
-    }
+0%{
+transform:
+translateX(-120%)
+rotate(25deg);
+}
 
-    .skill:hover{
+100%{
+transform:
+translateX(120%)
+rotate(25deg);
+}
+}
 
-      transform:
-      translateY(-5px);
+/* ========================= */
+/* FLOATING LABELS */
+/* ========================= */
 
-      background:
-      rgba(255,255,255,0.18);
-    }
+.floating-tag{
 
-    /* CONTACT */
+position:absolute;
 
-    .contact-wrap{
+padding:14px 22px;
 
-      display:grid;
+border-radius:50px;
 
-      grid-template-columns:
-      repeat(2,1fr);
+background:
+rgba(255,255,255,0.08);
 
-      gap:50px;
+border:
+1px solid rgba(255,255,255,0.12);
 
-      align-items:center;
-    }
+backdrop-filter:blur(20px);
 
-    .contact-text p{
+font-size:13px;
 
-      font-size:18px;
+letter-spacing:2px;
 
-      line-height:35px;
+animation:
+tagFloat 6s ease-in-out infinite;
+}
 
-      margin-bottom:35px;
+.t1{
+top:10%;
+left:-10%;
+}
 
-      color:
-      rgba(255,255,255,0.9);
-    }
+.t2{
+bottom:12%;
+right:-12%;
+animation-delay:2s;
+}
 
-    .contact-info{
+.t3{
+top:45%;
+right:-14%;
+animation-delay:4s;
+}
 
-      display:flex;
-      flex-direction:column;
-      gap:20px;
-    }
+@keyframes tagFloat{
 
-    .contact-item{
+0%,100%{
+transform:translateY(0px);
+}
 
-      display:flex;
-      align-items:center;
+50%{
+transform:translateY(-12px);
+}
+}
 
-      gap:18px;
-    }
+/* ========================= */
+/* SECTIONS */
+/* ========================= */
 
-    .contact-item i{
+section{
 
-      width:52px;
-      height:52px;
+padding:120px 7%;
 
-      display:flex;
-      justify-content:center;
-      align-items:center;
+position:relative;
+}
 
-      border-radius:50%;
+.section-title{
 
-      background:
-      rgba(255,255,255,0.10);
+font-family:'Syne',sans-serif;
 
-      border:
-      1px solid rgba(255,255,255,0.16);
-    }
+font-size:68px;
 
-    /* EDITORIAL SYSTEM */
+margin-bottom:70px;
 
-    .editorial-system{
+letter-spacing:-2px;
+}
 
-      position:relative;
+/* ========================= */
+/* GLASS CARD */
+/* ========================= */
 
-      width:100%;
-      height:560px;
+.glass{
 
-      overflow:hidden;
+position:relative;
 
-      border-radius:40px;
+overflow:hidden;
 
-      background:
-      rgba(255,255,255,0.06);
+background:
+rgba(255,255,255,0.08);
 
-      border:
-      1px solid rgba(255,255,255,0.12);
+border:
+1px solid rgba(255,255,255,0.12);
 
-      backdrop-filter:blur(24px);
+backdrop-filter:blur(24px);
 
-      box-shadow:
-      0 20px 60px rgba(0, 0, 0, 0.82);
+border-radius:34px;
 
-      display:flex;
-      justify-content:center;
-      align-items:center;
-    }
+box-shadow:
+0 20px 60px rgba(0,0,0,0.15);
 
-    /* CENTER CARD */
+transition:.5s;
+}
 
-    .editorial-center{
+.glass:hover{
 
-      position:relative;
+transform:
+translateY(-10px)
+scale(1.01);
+}
 
-      width:340px;
+.glass::before{
 
-      padding:42px;
+content:"";
 
-      z-index:10;
+position:absolute;
 
-      text-align:center;
-    }
+top:-120%;
+left:-40%;
 
-    .editorial-small{
+width:180%;
+height:180%;
 
-      display:block;
+background:
+linear-gradient(
+120deg,
+transparent,
+rgba(255,255,255,0.12),
+transparent
+);
 
-      font-size:12px;
+transform:rotate(25deg);
 
-      letter-spacing:4px;
+animation:
+sweep 7s linear infinite;
+}
 
-      margin-bottom:18px;
+/* ========================= */
+/* ABOUT */
+/* ========================= */
 
-      color:
-      rgba(255,255,255,0.75);
-    }
+.about-card{
 
-    .editorial-center h3{
+padding:60px;
+}
 
-      font-family:'Syne',sans-serif;
+.about-card p{
 
-      font-size:30px;
+font-size:20px;
 
-      line-height:42px;
+line-height:40px;
 
-      color:white;
-    }
+color:
+rgba(255,255,255,0.9);
+}
 
-    /* MARQUEE */
+/* ========================= */
+/* EXPERIENCE */
+/* ========================= */
 
-    .marquee{
+.exp-wrap{
 
-      position:absolute;
+display:flex;
+flex-direction:column;
+gap:28px;
+}
 
-      width:140%;
+.exp-card{
 
-      overflow:hidden;
+padding:40px;
+}
 
-      white-space:nowrap;
+.exp-top{
 
-      padding:18px 0;
+display:flex;
+justify-content:space-between;
+flex-wrap:wrap;
 
-      background:
-      rgba(0,0,0,0.32);
+gap:12px;
 
-      border-top:
-      1px solid rgba(255,255,255,0.08);
+margin-bottom:18px;
+}
 
-      border-bottom:
-      1px solid rgba(8, 0, 0, 0.921);
+.exp-top h3{
 
-      backdrop-filter:blur(20px);
+font-size:30px;
+}
 
-      box-shadow:
-      0 10px 30px rgba(0,0,0,0.15);
+.exp-card p{
 
-      mask-image:
-      linear-gradient(
-      to right,
-      transparent,
-      black 0%,
-      black 90%,
-      transparent
-      );
-    }
+line-height:34px;
 
-    .marquee-top{
-      top:30px;
-    }
+color:
+rgba(255,255,255,0.9);
+}
 
-    .marquee-bottom{
-      bottom:30px;
-    }
+/* ========================= */
+/* SKILLS */
+/* ========================= */
 
-    /* TRACK */
+.skills{
 
-    .marquee-track{
+display:flex;
+flex-wrap:wrap;
 
-      display:flex;
+gap:18px;
+}
 
-      width:max-content;
+.skill{
 
-      gap:20px;
+padding:16px 24px;
 
-      animation:
-      marqueeMove 18s linear infinite;
-    }
+border-radius:60px;
 
-    .marquee-track.reverse{
+background:
+rgba(255,255,255,0.08);
 
-      animation:
-      marqueeReverse 18s linear infinite;
-    }
+border:
+1px solid rgba(255,255,255,0.12);
 
-    /* WORDS */
+backdrop-filter:blur(18px);
 
-    .marquee-track span{
+transition:.4s;
+}
 
-      padding:14px 24px;
+.skill:hover{
 
-      border-radius:60px;
+transform:
+translateY(-5px);
 
-      background:
-      rgba(255,255,255,0.08);
+background:
+rgba(255,255,255,0.18);
+}
 
-      border:
-      1px solid rgba(255,255,255,0.12);
+/* ========================= */
+/* CONTACT */
+/* ========================= */
 
-      backdrop-filter:blur(18px);
+.contact-grid{
 
-      color:white;
+display:grid;
 
-      font-size:13px;
-      font-weight:600;
+grid-template-columns:
+1fr 1fr;
 
-      letter-spacing:2px;
+gap:60px;
 
-      transition:.3s;
-    }
+align-items:center;
+}
 
-    .marquee-track span:hover{
+/* ========================= */
+/* EDITORIAL SYSTEM */
+/* ========================= */
 
-      background:
-      rgba(255,255,255,0.16);
+.editorial{
 
-      transform:
-      translateY(-2px);
-    }
+position:relative;
 
-    /* ANIMATION */
+height:560px;
 
-    @keyframes marqueeMove{
+border-radius:42px;
 
-      0%{
-        transform:translateX(0%);
-      }
+overflow:hidden;
 
-      100%{
-        transform:translateX(-50%);
-      }
-    }
+background:
+rgba(255,255,255,0.06);
 
-    @keyframes marqueeReverse{
+border:
+1px solid rgba(255,255,255,0.1);
 
-      0%{
-        transform:translateX(-50%);
-      }
+backdrop-filter:blur(24px);
 
-      100%{
-        transform:translateX(0%);
-      }
-    }
+display:flex;
+justify-content:center;
+align-items:center;
+}
 
-    /* HOVER PAUSE */
+.editorial-center{
 
-    .editorial-system:hover .marquee-track{
-      animation-play-state:paused;
-    }
+position:relative;
 
-    /* FOOTER */
+width:360px;
 
-    footer{
+padding:44px;
 
-      padding:35px 7%;
+z-index:5;
 
-      margin-top:40px;
+text-align:center;
+}
 
-      border-top:
-      1px solid rgba(255,255,255,0.08);
+.editorial-center span{
 
-      display:flex;
-      justify-content:space-between;
-      flex-wrap:wrap;
+display:block;
 
-      gap:20px;
+letter-spacing:4px;
 
-      color:
-      rgba(255,255,255,0.75);
-    }
+font-size:12px;
 
-    /* RESUME OVERLAY */
+margin-bottom:18px;
 
-    .resume-overlay{
+color:
+rgba(255,255,255,0.75);
+}
 
-      position:fixed;
-      inset:0;
+.editorial-center h3{
 
-      width:100%;
-      height:100vh;
+font-family:'Syne',sans-serif;
 
-      background:
-      linear-gradient(
-      135deg,
-      #ff3b3b,
-      #2563eb,
-      #00c16a
-      );
+font-size:34px;
 
-      z-index:99999;
+line-height:46px;
+}
 
-      display:none;
-      flex-direction:column;
-    }
+/* MARQUEE */
 
-    .resume-header{
+.band{
 
-      width:100%;
+position:absolute;
 
-      padding:18px 6%;
+width:140%;
 
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
+padding:20px 0;
 
-      background:
-      rgba(255,255,255,0.08);
+overflow:hidden;
 
-      border-bottom:
-      1px solid rgba(255,255,255,0.08);
+background:
+rgba(0,0,0,0.32);
 
-      backdrop-filter:blur(22px);
-    }
+backdrop-filter:blur(20px);
 
-    .resume-header button{
+border-top:
+1px solid rgba(255,255,255,0.08);
 
-      padding:14px 24px;
+border-bottom:
+1px solid rgba(255,255,255,0.08);
 
-      border:none;
+mask-image:
+linear-gradient(
+to right,
+transparent,
+black 10%,
+black 90%,
+transparent
+);
+}
 
-      border-radius:50px;
+.top-band{
+top:90px;
+}
 
-      cursor:pointer;
+.bottom-band{
+bottom:90px;
+}
 
-      background:
-      rgba(255,255,255,0.14);
+.track{
 
-      border:
-      1px solid rgba(255,255,255,0.14);
+display:flex;
 
-      color:white;
+width:max-content;
 
-      font-weight:700;
-    }
+gap:18px;
 
-    #resumeFrame{
-      width:100%;
-      height:100%;
-      border:none;
-    }
+animation:
+move 18s linear infinite;
+}
 
-    /* RESPONSIVE */
+.reverse{
+animation:
+reverseMove 18s linear infinite;
+}
 
-    @media(max-width:1100px){
+.track span{
 
-      .hero{
-        flex-direction:column-reverse;
-        text-align:center;
-      }
+padding:14px 24px;
 
-      .buttons,
-      .socials{
-        justify-content:center;
-      }
+border-radius:60px;
 
-      .hero h1{
-        font-size:68px;
-        line-height:72px;
-      }
+background:
+rgba(255,255,255,0.08);
 
-      .contact-wrap{
-        grid-template-columns:1fr;
-      }
-    }
+border:
+1px solid rgba(255,255,255,0.12);
 
-    @media(max-width:768px){
+letter-spacing:2px;
 
-      nav{
-        padding:18px 6%;
-      }
+font-size:13px;
+}
 
-      .menu-btn{
-        display:block;
-      }
+@keyframes move{
 
-      .nav-links{
+0%{
+transform:translateX(0%);
+}
 
-        position:absolute;
+100%{
+transform:translateX(-50%);
+}
+}
 
-        top:80px;
-        right:-100%;
+@keyframes reverseMove{
 
-        width:260px;
+0%{
+transform:translateX(-50%);
+}
 
-        flex-direction:column;
+100%{
+transform:translateX(0%);
+}
+}
 
-        padding:30px;
+/* ========================= */
+/* FOOTER */
+/* ========================= */
 
-        border-radius:25px;
+footer{
 
-        background:
-        rgba(255,255,255,0.08);
+padding:40px 7%;
 
-        transition:.4s;
-      }
+display:flex;
+justify-content:space-between;
+flex-wrap:wrap;
 
-      .nav-links.active{
-        right:20px;
-      }
+gap:20px;
 
-      .hero{
-        padding:130px 6% 80px;
-      }
+border-top:
+1px solid rgba(255,255,255,0.08);
 
-      section{
-        padding:80px 6%;
-      }
+color:
+rgba(255,255,255,0.7);
+}
 
-      .hero h1{
-        font-size:52px;
-        line-height:58px;
-      }
+/* ========================= */
+/* RESPONSIVE */
+/* ========================= */
 
-      .section-title{
-        font-size:42px;
-      }
+@media(max-width:1100px){
 
-      .editorial-system{
-        height:460px;
-      }
+.hero{
 
-      .editorial-center{
+grid-template-columns:1fr;
 
-        width:90%;
+text-align:center;
+}
 
-        padding:28px;
-      }
+.hero h1{
 
-      .editorial-center h3{
+font-size:72px;
+line-height:76px;
+}
 
-        font-size:24px;
-        line-height:34px;
-      }
+.buttons,
+.socials{
 
-      .marquee-top{
-        top:50px;
-      }
+justify-content:center;
+}
 
-      .marquee-bottom{
-        bottom:50px;
-      }
+.contact-grid{
 
-      .marquee-track span{
+grid-template-columns:1fr;
+}
+}
 
-        padding:10px 18px;
+@media(max-width:768px){
 
-        font-size:11px;
+nav{
 
-        letter-spacing:1px;
-      }
-    }
+padding:20px 6%;
+}
 
-    @media(max-width:480px){
+.nav-links{
+display:none;
+}
 
-      .hero h1{
-        font-size:42px;
-        line-height:48px;
-      }
+.hero{
 
-      .buttons{
-        flex-direction:column;
-      }
+padding:
+160px 6% 100px;
+}
 
-      .btn{
-        width:100%;
-      }
+section{
 
-      .section-title{
-        font-size:36px;
-      }
+padding:90px 6%;
+}
 
-      .about-card,
-      .exp-card{
-        padding:25px;
-      }
-    }
+.hero h1{
 
-  </style>
+font-size:54px;
+line-height:58px;
+}
+
+.section-title{
+
+font-size:46px;
+}
+
+.visual-frame{
+
+width:100%;
+height:520px;
+}
+
+.editorial{
+
+height:470px;
+}
+}
+
+</style>
 
 </head>
 
 <body>
 
-  <!-- NAVBAR -->
+<!-- CURSOR -->
 
-  <nav>
+<div class="cursor-light"></div>
 
-    <div class="logo">
-      AKASHAY.
-    </div>
+<!-- AMBIENT -->
 
-    <div class="nav-links" id="navLinks">
+<div class="ambient a1"></div>
+<div class="ambient a2"></div>
+<div class="ambient a3"></div>
 
-      <a href="#about">ABOUT</a>
-      <a href="#experience">EXPERIENCE</a>
-      <a href="#skills">SKILLS</a>
-      <a href="#contact">CONTACT</a>
+<!-- NAVBAR -->
 
-    </div>
+<nav>
 
-    <div class="menu-btn" id="menuBtn">
-      <i class="fa-solid fa-bars"></i>
-    </div>
+<div class="logo">
+AKASHAY.
+</div>
 
-  </nav>
+<div class="nav-links">
 
-  <!-- HERO -->
+<a href="#about">ABOUT</a>
+<a href="#experience">EXPERIENCE</a>
+<a href="#skills">SKILLS</a>
+<a href="#contact">CONTACT</a>
 
-  <section class="hero">
+</div>
 
-    <div class="hero-content">
+</nav>
 
-      <div class="small-text">
-        PR • DIGITAL STORYTELLING • CREATIVE CULTURE
-      </div>
+<!-- HERO -->
 
-      <h1>
-        Building stories
-        that feel alive,
-        emotional &
-        culturally relevant.
-      </h1>
+<section class="hero">
 
-      <p>
-        Public relations and media communication
-        professional blending storytelling,
-        visual aesthetics, strategy, and digital
-        culture into meaningful brand narratives.
-      </p>
+<!-- LEFT -->
 
-      <div class="buttons">
+<div class="hero-left">
 
-        <a
-          href="#"
-          class="btn primary-btn"
-          onclick="openResume(event)">
+<div class="mini">
+PR • MEDIA • STORYTELLING • CULTURE
+</div>
 
-          View Resume
+<h1>
+Building stories
+that feel alive,
+emotional &
+culturally relevant.
+</h1>
 
-        </a>
+<p>
+Public relations and media communication professional blending storytelling, visual aesthetics, strategy, and digital culture into meaningful brand narratives.
+</p>
 
-        <a
-          href="#contact"
-          class="btn secondary-btn">
+<div class="buttons">
 
-          Let's Connect
+<button class="btn primary">
+View Resume
+</button>
 
-        </a>
+<button class="btn secondary">
+Let's Connect
+</button>
 
-      </div>
+</div>
 
-      <!-- SOCIALS -->
+<div class="socials">
 
-      <div class="socials">
+<a href="#">
+<i class="fa-brands fa-linkedin-in"></i>
+</a>
 
-        <a href="https://www.linkedin.com/in/akashay-kumar-725533352">
-          <i class="fa-brands fa-linkedin-in"></i>
-        </a>
+<a href="#">
+<i class="fa-brands fa-instagram"></i>
+</a>
 
-        <a href="https://www.instagram.com/ahem_akashay/">
-          <i class="fa-brands fa-instagram"></i>
-        </a>
+<a href="mailto:akshay2001singh@gmail.com">
+<i class="fa-solid fa-envelope"></i>
+</a>
 
-        <a href="mailto:akshay2001singh@gmail.com">
-          <i class="fa-solid fa-envelope"></i>
-        </a>
+</div>
 
-      </div>
+</div>
 
-    </div>
+<!-- RIGHT -->
 
-    <!-- IMAGE -->
+<div class="hero-right">
 
-    <div class="hero-image">
+<div class="visual-frame">
 
-      <div class="image-box">
+<img src="89ED34C1-E5FA-4BFC-AE0D-6CB62F7FECD2.PNG">
 
-        <img
-          src="89ED34C1-E5FA-4BFC-AE0D-6CB62F7FECD2.PNG"
-          alt="Akashay Kumar">
+</div>
 
-      </div>
+<div class="floating-tag t1">
+DIGITAL MARKETING
+</div>
 
-    </div>
+<div class="floating-tag t2">
+PUBLIC RELATIONS
+</div>
 
-  </section>
+<div class="floating-tag t3">
+STORYTELLING
+</div>
 
-  <!-- ABOUT -->
+</div>
 
-  <section id="about">
+</section>
 
-    <h2 class="section-title">
-      About
-    </h2>
+<!-- ABOUT -->
 
-    <div class="about-card glass">
+<section id="about">
 
-      <p>
-       I come from an artistic and communication-driven background where storytelling, visuals, emotion, and culture shape how audiences connect with brands. My work blends public relations, digital strategy, media communication, and creative storytelling into experiences that feel authentic and impactful. Shapping narratives through art of storytelling, visual aesthetics, and strategy is my forte with my skills and expertise in public relations, digital marketing, media strategy, and creative storytelling. I can help the brand build a presence that resonates with audiences and engages them in meaningful ways.
-      </p>
+<h2 class="section-title">
+About
+</h2>
 
-    </div>
+<div class="about-card glass">
 
-  </section>
+<p>
+I come from an artistic and communication-driven background where storytelling, visuals, emotion, and culture shape how audiences connect with brands. My work blends public relations, digital strategy, media communication, and creative storytelling into experiences that feel authentic and impactful.
+</p>
 
-  <!-- EXPERIENCE -->
+</div>
 
-  <section id="experience">
+</section>
 
-    <h2 class="section-title">
-      Experience
-    </h2>
+<!-- EXPERIENCE -->
 
-    <div class="exp-wrap">
+<section id="experience">
 
-      <div class="exp-card glass">
+<h2 class="section-title">
+Experience
+</h2>
 
-        <div class="exp-top">
-          <h3>Burson</h3>
-          <span>PR Intern</span>
-        </div>
+<div class="exp-wrap">
 
-        <p>
-         Assisted in PR campaigns, communication strategy, media monitoring, influencer outreach, and storytelling-focused brand communication.Crafted and curated a influencer list for brand, did brand awarness used new-gen ai tools and platforms for media management and media monitoring with the strong understanding of research and analysis created reports for the brand.
-        </p>
+<div class="exp-card glass">
 
-      </div>
+<div class="exp-top">
 
-      <div class="exp-card glass">
+<h3>Burson</h3>
 
-        <div class="exp-top">
-          <h3>Congress</h3>
-          <span>Media & Communication Intern</span>
-        </div>
+<span>PR Intern</span>
 
-        <p>
-         Worked on narrative analysis, campaign tracking, media monitoring, and communication strategy during election campaigns.Analyzed media coverage and created engaging narratives for the campaign. Worked as a media monitoring partner always keeping an eye on the media coverage. when every headline was important worked for BJNY and election 2024.
-        </p>
+</div>
 
-      </div>
+<p>
+Worked on PR campaigns, communication strategy, influencer outreach, and storytelling-driven media communication.
+</p>
 
-      <div class="exp-card glass">
+</div>
 
-        <div class="exp-top">
-          <h3>GKFTII</h3>
-          <span>Content Writer</span>
-        </div>
+<div class="exp-card glass">
 
-        <p>
-          Created SEO content and storytelling-driven
-          communication for digital audiences. Worked on
-          curating and crafting web content for GKFTII website and Social Media.
-          Helping them build a strong online presence and audience engagement.
-          With a focus on storytelling and audience
-          engagement.
-        </p>
+<div class="exp-top">
 
-      </div>
+<h3>Indian National Congress</h3>
 
-    </div>
+<span>Media & Communication Intern</span>
 
-  </section>
+</div>
 
-  <!-- SKILLS -->
+<p>
+Worked on campaign narratives, communication strategy, political media tracking, and public messaging.
+</p>
 
-  <section id="skills">
+</div>
 
-    <h2 class="section-title">
-      Skills
-    </h2>
+</div>
 
-    <div class="skills">
+</section>
 
-      <div class="skill">Creative Storytelling</div>
-      <div class="skill">Brand Communication</div>
-      <div class="skill">Public Relations</div>
-      <div class="skill">Media Strategy</div>
-      <div class="skill">Copywriting</div>
-      <div class="skill">SEO Content</div>
-      <div class="skill">Audience Engagement</div>
-      <div class="skill">Digital Communication</div>
-      <div class="skill">Social Media Management</div>
-      <div class="skill">Content Marketing</div>
-      <div class="skill">Digital Marketing</div>
-      <div class="skill">Influencer Outreach</div>
-      <div class="skill">Brand Awareness</div>
-      <div class="skill">Digital Marketing</div>
-      <div class="skill">Media Monitoring</div>
-      <div class="skill">Campaign Tracking</div>
-      <div class="skill">Media Coverage Analysis</div>
-      <div class="skill">Content Writing</div>
-      <div class="skill">SEO Optimization</div>
-      <div class="skill">Communication Strategy</div>
-      <div class="skill">Narrative Analysis</div>
+<!-- SKILLS -->
 
-    </div>
+<section id="skills">
 
-  </section>
+<h2 class="section-title">
+Skills
+</h2>
 
-  <!-- CONTACT -->
+<div class="skills">
 
-  <section id="contact">
+<div class="skill">Creative Storytelling</div>
+<div class="skill">Public Relations</div>
+<div class="skill">Brand Communication</div>
+<div class="skill">Media Strategy</div>
+<div class="skill">Copywriting</div>
+<div class="skill">SEO Content</div>
+<div class="skill">Digital Communication</div>
+<div class="skill">Audience Engagement</div>
 
-    <h2 class="section-title">
-      Contact
-    </h2>
+</div>
 
-    <div class="contact-wrap">
+</section>
 
-      <!-- LEFT -->
+<!-- CONTACT -->
 
-      <div class="contact-text">
+<section id="contact">
 
-        <p>
-          Open to opportunities in public relations,
-          media communication, digital storytelling,
-          and creative strategy.
-        </p>
+<h2 class="section-title">
+Contact
+</h2>
 
-        <div class="contact-info">
+<div class="contact-grid">
 
-          <div class="contact-item">
-            <i class="fa-solid fa-envelope"></i>
-            <span>
-              akshay2001singh@gmail.com
-            </span>
-          </div>
+<div>
 
-          <div class="contact-item">
-            <i class="fa-solid fa-phone"></i>
-            <span>
-              +91 7321850064
-            </span>
-          </div>
+<p style="
+font-size:20px;
+line-height:38px;
+margin-bottom:40px;
+color:rgba(255,255,255,0.9);
+">
 
-        </div>
+Open to opportunities in public relations, media communication, digital storytelling, and creative strategy.
 
-      </div>
+</p>
 
-      <!-- RIGHT -->
+<div style="
+display:flex;
+flex-direction:column;
+gap:22px;
+">
 
-      <div class="editorial-system">
+<div style="
+display:flex;
+align-items:center;
+gap:16px;
+">
 
-        <!-- TOP -->
+<i class="fa-solid fa-envelope"></i>
 
-        <div class="marquee marquee-top">
+<span>
+akshay2001singh@gmail.com
+</span>
 
-          <div class="marquee-track">
+</div>
 
-            <span>CREATIVE-WRITING</span>
-            <span>BRANDING</span>
-            <span>STORYTELLING</span>
-            <span>COMMUNICATION</span>
-            <span>PR</span>
-            <span>MARKETING</span>
+<div style="
+display:flex;
+align-items:center;
+gap:16px;
+">
 
-            <span>COPYWRITING</span>
-            <span>STORYTELLING</span>
-            <span>MEDIA MANAGEMENT</span>
-          <span>PUBLIC-RELATIONS</span>
-            <span>STRATEGY-COMMUNICATION</span>
-            <span>DIGITAL-Marketing</span>
+<i class="fa-solid fa-phone"></i>
 
-          </div>
+<span>
++91 7321850064
+</span>
 
-        </div>
+</div>
 
-        <!-- CENTER -->
+</div>
 
-        <div class="editorial-center glass">
+</div>
 
-          <span class="editorial-small">
-            CREATIVE COMMUNICATION
-          </span>
+<!-- RIGHT -->
 
-          <h3>
-            Creating stories that feel emotional,
-            human & culturally relevant.
-          </h3>
+<div class="editorial">
 
-        </div>
+<div class="band top-band">
 
-        <!-- BOTTOM -->
+<div class="track">
 
-        <div class="marquee marquee-bottom">
+<span>STORYTELLING</span>
+<span>MEDIA</span>
+<span>COMMUNICATION</span>
+<span>PR</span>
+<span>BRANDING</span>
+<span>DIGITAL</span>
 
-          <div class="marquee-track reverse">
+<span>STORYTELLING</span>
+<span>MEDIA</span>
+<span>COMMUNICATION</span>
+<span>PR</span>
 
-            <span>CREATIVE-WRITING</span>
-            <span>BRANDING</span>
-            <span>STORYTELLING</span>
-            <span>COMMUNICATION</span>
-            <span>PR</span>
-            <span>MARKETING</span>
+</div>
 
-            <span>COPYWRITING</span>
-            <span>STORYTELLING</span>
-            <span>MEDIA MANAGEMENT</span>
-          <span>PUBLIC-RELATIONS</span>
-            <span>STRATEGY-COMMUNICATION</span>
-            <span>DIGITAL-Marketing</span>
+</div>
 
-          </div>
+<div class="editorial-center glass">
 
-        </div>
+<span>
+CREATIVE COMMUNICATION
+</span>
 
-      </div>
+<h3>
+Creating stories
+that feel emotional,
+human &
+culturally relevant.
+</h3>
 
-    </div>
+</div>
 
-  </section>
+<div class="band bottom-band">
 
-  <!-- FOOTER -->
+<div class="track reverse">
 
-  <footer>
+<span>CULTURE</span>
+<span>VOICE</span>
+<span>NARRATIVE</span>
+<span>CREATIVE</span>
+<span>STRATEGY</span>
+<span>ENGAGEMENT</span>
 
-    <p>
-      © 2026 Akashay Kumar — crafted with creativity.
-    </p>
+<span>CULTURE</span>
+<span>VOICE</span>
+<span>NARRATIVE</span>
 
-    <div>
-      LinkedIn • Instagram
-    </div>
+</div>
 
-  </footer>
+</div>
 
-  <!-- RESUME OVERLAY -->
+</div>
 
-  <div
-    class="resume-overlay"
-    id="resumeOverlay">
+</div>
 
-    <div class="resume-header">
+</section>
 
-      <button onclick="closeResume()">
-        ← Back to Portfolio
-      </button>
+<!-- FOOTER -->
 
-    </div>
+<footer>
 
-    <iframe
-      src=""
-      id="resumeFrame">
-    </iframe>
+<p>
+© 2026 Akashay Kumar — crafted with creativity.
+</p>
 
-  </div>
+<div>
+LinkedIn • Instagram
+</div>
 
-  <!-- JAVASCRIPT -->
+</footer>
 
-  <script>
+<script>
 
-    // MOBILE NAV
+/* CURSOR LIGHT */
 
-    const menuBtn =
-    document.getElementById("menuBtn");
+const cursor =
+document.querySelector(".cursor-light");
 
-    const navLinks =
-    document.getElementById("navLinks");
+window.addEventListener(
+"mousemove",
+(e)=>{
 
-    menuBtn.addEventListener("click", () => {
+cursor.style.left =
+e.clientX + "px";
 
-      navLinks.classList.toggle("active");
+cursor.style.top =
+e.clientY + "px";
 
-    });
+}
+);
 
-    // RESUME OVERLAY
+/* NAVBAR EFFECT */
 
-    function openResume(event){
+const navbar =
+document.querySelector("nav");
 
-      event.preventDefault();
+window.addEventListener(
+"scroll",
+()=>{
 
-      const overlay =
-      document.getElementById("resumeOverlay");
+if(window.scrollY > 50){
 
-      const frame =
-      document.getElementById("resumeFrame");
+navbar.style.background =
+"rgba(0,0,0,0.22)";
 
-      frame.src =
-      "https://drive.google.com/file/d/11EZ9NDcQkspfaRrOVSXWcUbsWz-eu3Ky/preview";
+}else{
 
-      overlay.style.display = "flex";
+navbar.style.background =
+"rgba(255,255,255,0.06)";
+}
 
-      document.body.style.overflow = "hidden";
-    }
+}
+);
 
-    function closeResume(){
+/* 3D TILT */
 
-      const overlay =
-      document.getElementById("resumeOverlay");
+const frame =
+document.querySelector(".visual-frame");
 
-      const frame =
-      document.getElementById("resumeFrame");
+window.addEventListener(
+"mousemove",
+(e)=>{
 
-      overlay.style.display = "none";
+const x =
+(window.innerWidth / 2 - e.pageX) / 30;
 
-      frame.src = "";
+const y =
+(window.innerHeight / 2 - e.pageY) / 30;
 
-      document.body.style.overflow = "auto";
-    }
+frame.style.transform =
+`rotateY(${x}deg) rotateX(${-y}deg)`;
 
-  </script>
+}
+);
+
+</script>
 
 </body>
 </html>
